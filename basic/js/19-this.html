@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var name = "Window"
+			var obj = {
+				name: 'Object',
+				getFun: function() {
+					return function() {
+						return this.name;
+					}
+				}
+			}
+			console.log(obj.getFun()())
+		</script> 
+	</head>
+	<body>
+	</body>
+</html>

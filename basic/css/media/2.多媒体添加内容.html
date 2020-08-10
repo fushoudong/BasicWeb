@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			p {
+				color: #0000FF;
+			}
+			@media all and (min-width: 1000px) {
+				p:after {
+					content: attr(data-name);
+					color: deeppink;
+					font-size: 20px;
+					font-style: italic;
+				}
+				p {
+					color: red;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<p data-name="史小斐">喜欢</p>
+	</body>
+</html>

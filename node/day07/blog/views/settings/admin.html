@@ -1,0 +1,95 @@
+{{extend '../_layouts/home.html'}} 
+{{block 'title'}}
+{{'多人博客 - 首页'}}
+{{/block}} 
+{{block 'body'}}
+  <section class="container row mx-auto mt-3 pl-5" style="z-index: -1;">
+    <div class="col-md-3 pr-5">
+      {{include '../_partials/settings-nav.html'}}
+    </div>
+    <div class="col-md-8">
+      <div class="subhead">
+        <h2>修改密码</h2>
+      </div>
+      <hr />
+      <form id="pass_form">
+        <div class="form-group" hidden>
+          <input
+            name="_id"
+            type="password"
+            class="form-control"
+            value="{{user._id}}"
+          />
+        </div>
+        <div class="form-group" hidden>
+          <input
+            id="basePass"
+            type="password"
+            class="form-control"
+            value="{{user.password}}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">当前密码</label>
+          <input
+            id="currentPass"
+            type="password"
+            class="form-control"
+            name="oldPass"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">新的密码</label>
+          <input
+            id="newPass"
+            type="password"
+            class="form-control"
+            name="newPass"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">确认密码</label>
+          <input
+            id="newPassRest"
+            type="password"
+            class="form-control"
+            name="newPassReset"
+          />
+        </div>
+        <button type="submit" class="btn btn-success">保存</button>
+      </form>
+      <hr />
+    </div>
+  </section>
+
+{{/block}} 
+
+{{block 'script'}}
+  <script src="../../node_modules/blueimp-md5/js/md5.js"></script>
+  <script>
+    $("#pass_form").on("submit", function (e) {
+      e.preventDefault();
+      const formData = $(this).serialize();
+      console.log($("#basePass").val(),md5(md5($("#currentPass").val())));
+      if ($("#basePass").val() == md5(md5($("#currentPass").val()))) {
+        if ($("#newPass").val() === $("#newPassRest").val()) {
+          $.ajax({
+            url: "/settings/admin",
+            type: "post",
+            data: formData,
+            dataType: "json",
+            success(data) {
+              if(data.respCode === "0000") {
+                alert(data.msg)
+              }
+            },
+          });
+        } else {
+          alert("确认新密码要一致");
+        }
+      } else {
+        alert("原始密码错误");
+      }
+    });
+  </script>
+{{/block}}

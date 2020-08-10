@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = () => {
+				// 遍历会遍历到最深层节点
+				let div1 = document.getElementsByClassName('div1')[0]
+				let filter = {
+					acceptNode: (node) => {
+						if(node.nodeType === 1) {
+							return NodeFilter.FILTER_ACCEPT
+						}
+					}
+				}
+				let iterator = document.createNodeIterator(div1, NodeIterator.SHOW_ELEMENT, filter, false)
+				let node = iterator.nextNode()
+				while(node !=  null) {
+					console.log('node', node.nodeName)
+					node = iterator.nextNode()
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="div1">
+			<p><b>Hello world</b></p>
+			<p></p>
+			<li>List Item 1</li>
+			<li>List Item 2</li>
+			<li>List Item 3</li>
+			<p><cite>标题</cite></p>
+		</div>
+	</body>
+</html>

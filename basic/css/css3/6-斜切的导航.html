@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        width: 390px;
+        height: 40px;
+        list-style: none;
+        overflow: hidden;
+      }
+      li {
+        color: white;
+        line-height: 40px;
+        text-align: center;
+        background: red;
+        float: left;
+        width: 100px;
+        margin-right: 10px;
+        transform: skew(-45deg);
+        padding: 10px auto;
+      }
+      span {
+        display: block;
+        transform: skew(45deg);
+      }
+      li:first-child {
+        background: blue;
+        margin-left: -60px;
+        padding-left: 20px;
+      }
+      li:last-child {
+        margin-right: -60px;
+        padding-right: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><span>首页</span></li>
+      <li><span>关于我们</span></li>
+      <li><span>联系方式</span></li>
+      <li><span>附加</span></li>
+    </ul>
+  </body>
+</html>

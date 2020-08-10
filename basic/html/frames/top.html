@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0px;
+      margin: 0px;
+      list-style: none;
+    }
+    .topNews {
+      display: flex;
+      justify-content: space-around;
+      height: fit-content;
+    }
+    h1 {
+      width: 400px;
+      flex: 1;
+      display: inline-block;
+    }
+    ul {
+      top: 4px;
+      position: absolute;
+      right: 0;
+      width: 403px;
+      overflow: hidden;
+    }
+    li {
+      cursor: pointer;
+      border-right: 1px solid gray;
+      float: left;
+      width: 100px;
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      color: wheat;
+      font-size: 14px;
+      background: url(../../images/btnaactive.jpg);
+    }
+    li:last-child {
+      border: none;
+    }
+    li:hover {
+      color: #000;
+      background: url(../../images/btnavisited.jpg);
+    }
+  </style>
+</head>
+<body>
+  <div class="topRows">
+    <h1>这是top中的内容</h1>
+    <ul>
+      <li>菜单</li>
+      <li>主页</li>
+      <li>关于</li>
+      <li>联系我们</li>
+    </ul>
+  </div>
+  
+</body>
+</html>

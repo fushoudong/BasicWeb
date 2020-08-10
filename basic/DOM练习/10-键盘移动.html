@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>键盘移动</title>
+		<style type="text/css">
+			.box {
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = () => {
+				let box = document.querySelector('.box')
+				document.onkeydown = event => {
+					console.log('键盘按下', event.keyCode, box.offsetLeft)
+					switch(event.keyCode) {
+						case 37:
+							box.style.left = box.offsetLeft - 10 + 'px'
+							break
+						case 38:
+							box.style.top = box.offsetTop - 10 + 'px'
+							break
+						case 39:
+							box.style.left = box.offsetLeft + 10 + 'px'
+							break
+						case 40:
+							box.style.top = box.offsetTop + 10 + 'px'
+							break
+						default:
+							alert('请按下方向键')
+							break
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			
+		</div>
+	</body>
+</html>

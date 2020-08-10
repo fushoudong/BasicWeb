@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .out {
+        width: 300px;
+        height: 300px;
+        border: solid 1px black;
+        perspective: 300px;
+        margin: 100px auto;
+      }
+      .in {
+        width: 100px;
+        height: 100px;
+        margin: 100px auto;
+        background: red;
+        transition: all 1s ease;
+      }
+      .out:hover .in{
+        transform: rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="out">
+      <div class="in"></div>
+    </div>
+  </body>
+</html>

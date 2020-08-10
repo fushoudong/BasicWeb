@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .father {
+        /* display: inline-block; */
+        /* overflow: hidden; */
+        clear: both;
+        
+      }
+      .father::after {
+        content: "";
+      }
+      .son1 {
+        width: 130px;
+        height: 140px;
+        background: #eeeeee;
+        float: left;
+      }
+      .son2 {
+        width: 150px;
+        height: 130px;
+        background: crimson;
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="father">
+      <div class="son1"></div>
+      <div class="son2"></div>
+    </div>
+  </body>
+</html>

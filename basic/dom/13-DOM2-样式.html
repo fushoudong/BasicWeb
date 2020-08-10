@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 100px;
+				height: 100px;
+				background: blue;
+				text-align: center;
+				line-height: 100px;
+			}
+		</style>
+		<style type="text/css">
+			
+		</style>
+		<script type="text/javascript">
+			window.onload = () => {
+				let div = document.querySelector('div')
+				div.style.width = '100px'
+				div.style.height = '100px'
+				div.style.background = 'red'
+				div.style.textAlign = 'center'
+				div.style.cssFloat = 'left'
+				console.log('width', div.style.width)
+				console.log(document.defaultView.getComputedStyle(div).width)
+				console.log(document.defaultView.getComputedStyle(div).lineHeight)
+				console.log(div.style.cssText)
+				console.log(div.style.getPropertyValue('background'))
+				let sheet = document.styleSheets[0]
+				let rules = sheet.rules
+				console.log(sheet)
+				let rule = rules[0]
+				console.log(rule.selectorText)
+				console.log(rule.style.width)
+				console.log(rule.style.backgroundColor)
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			我爱斐斐
+		</div>
+		哈哈哈
+	</body>
+</html>

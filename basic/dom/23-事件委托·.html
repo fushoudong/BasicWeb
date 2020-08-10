@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+		<script type="text/javascript">
+			window.onload = function() {
+				let list = document.getElementsByClassName('menu')[0]
+				list.onclick = function(event) {
+					switch(event.target.id) {
+						case 'new': 
+							console.log('新建')
+							break;
+						case 'copy': 
+							console.log('复制')
+							break;
+						case 'cut': 
+							console.log('剪贴')
+							break
+						case 'paste':
+							console.log('粘贴')
+							break
+						default:
+							break
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul class="menu list-group text-center" style="width: 100px;">
+			<li class="list-group-item" id="new">新建</li>
+			<li class="list-group-item" id="copy">复制</li>
+			<li class="list-group-item" id="cut">剪贴</li>
+			<li class="list-group-item" id="paste">粘贴</li>
+		</ul>
+	</body>
+</html>

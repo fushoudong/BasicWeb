@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="../public/css/login.css" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <div class="header">
+        <a href="/"><img src="../public/img/logo3.png" alt="logo" /></a>
+        <h1>用户登录</h1>
+      </div>
+      <form id="login_form">
+        <div class="form-group">
+          <label for="">邮箱</label>
+          <input
+            type="email"
+            name="name"
+            class="form-control"
+            placeholder="Email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">密码</label>
+          <a class="pull-right" href="">忘记密码？</a>
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            placeholder="Password"
+          />
+        </div>
+        <div class="checkbox">
+          <label> <input type="checkbox" />记住我 </label>
+        </div>
+        <button type="submit" class="btn btn-success btn-block">登录</button>
+      </form>
+      <div class="message">
+        <p>没有账号? <a href="/register">点击创建</a>.</p>
+      </div>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+      $("#login_form").on("submit", function (e) {
+        e.preventDefault();
+        let formData = $(this).serialize();
+        console.log(formData);
+        $.ajax({
+          url: "/login",
+          type: 'POST',
+          data: formData,
+          dataType: 'JSON',
+          success(data) {
+            if(data.respCode === '0000') {
+              if(data.status === 1) {
+                alert(data.msg)
+              }else {
+                location.assign('/')
+              }
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

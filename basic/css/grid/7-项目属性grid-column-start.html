@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				grid-gap: 4px ;
+			}
+			.out {
+				width: 301px;
+				height: 401px;
+				box-sizing: border-box;
+				border: 1px solid black;
+				display: grid;
+				grid-gap: 3px;
+			}
+			.inner {
+				line-height: 96.33px;
+				color: wheat;
+				font-size: 30px;
+				text-align: center;
+			}
+			.inner:first-child {
+				grid-row-start: 1;
+				grid-row-end: 2;
+				grid-column-start: 2;
+				grid-column-end: 4;
+				background: #ef3429;
+			}
+			.inner:nth-child(2) {
+				line-height: 195.66px;
+				grid-row-start: 1;
+				grid-row-end: 3;
+				grid-column-start: 1;
+				grid-column-end: 2;
+				background-color: #4ba846;
+			}
+			.inner:nth-child(3) {
+				grid-row-start: 2;
+				grid-row-end: 3;
+				grid-column-start: 2;
+				grid-column-end: 3;
+				background-color: #f68f25;
+			}
+			.inner:nth-child(4) {
+				grid-row-start: 2;
+				grid-row-end: 3;
+				grid-column-start: 3;
+				grid-column-end: 4;
+				background-color: #0476c2;
+			}
+			.inner:nth-child(5) {
+				grid-row-start: 3;
+				grid-row-end: 4;
+				grid-column-start: 1;
+				grid-column-end: 2;
+				background-color: #c077af;
+			}
+			.inner:nth-child(6) {
+				grid-row-start: 3;
+				grid-row-end: 4;
+				grid-column-start: 2;
+				grid-column-end: 3;
+				background-color: #f8d29d;
+			}
+			.inner:nth-child(7) {
+				grid-row-start: 3;
+				grid-row-end: 4;
+				grid-column-start: 3;
+				grid-column-end: 4;
+				background-color: #b4a87f;
+			}
+			.inner:nth-child(8) {
+				grid-row-start: 4;
+				grid-row-end: 5;
+				grid-column-start: 1;
+				grid-column-end: 2;
+				background-color: #d0e4a8;
+			}
+			.inner:nth-child(9) {
+				grid-row-start: 4;
+				grid-row-end: 5;
+				grid-column-start: 2;
+				grid-column-end: 4;
+				background-color: #4dc7ec;
+			}
+			.out2 {
+				width: 301px;
+				height: 401px;
+				box-sizing: border-box;
+				border: 1px solid black;
+				display: grid;
+				grid-gap: 3px;
+			}
+			.inner2 {
+				line-height: 96.33px;
+				color: wheat;
+				font-size: 30px;
+				text-align: center;
+			}
+			.inner2:nth-child(1) {
+				grid-column: 1/4;
+				grid-row: 1/2;
+				background: #008000;
+			}
+			.inner2:nth-child(2) {
+				grid-column: 1/2;
+				grid-row: 2/3;
+				background: #f68f25;
+			}
+			.inner2:nth-child(3) {
+				grid-column: 2/4;
+				grid-row: 2/4;
+				background: #c077af;
+			}
+			.inner2:nth-child(4) {
+				grid-column: 1/2;
+				grid-row: 3/4;
+				background: #0476c2;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="out">
+			<div class="inner">1</div>
+			<div class="inner">2</div>
+			<div class="inner">3</div>
+			<div class="inner">4</div>
+			<div class="inner">5</div>
+			<div class="inner">6</div>
+			<div class="inner">7</div>
+			<div class="inner">8</div>
+			<div class="inner">9</div>
+		</div>
+		<div class="out2">
+			<div class="inner2">1</div>
+			<div class="inner2">2</div>
+			<div class="inner2">3</div>
+			<div class="inner2">4</div>
+		</div>
+	</body>
+</html>

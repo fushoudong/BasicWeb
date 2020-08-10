@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function Person() {
+				
+			}
+			Person.prototype.name = "斐斐"
+			Person.prototype.age = 22
+			Person.prototype.gender = '女'
+			Person.prototype.toString = function() {
+				return 'toString: [name: ' + this.name + ', age: ' + this.age + ', gender: ' + this.gender + ']' 
+			}
+			Person.prototype.friends = ['zs', 'ls', 'ww']
+			let p1 = new Person()
+			let p2 = new Person()
+			p2.name = '小斐斐'
+			console.log(p1.toString())
+			console.log(p1.name)
+			console.log(p1.toString == p2.toString)
+			console.log(p1.__proto__ == Person.prototype)
+			console.log(p1.__proto__.constructor)
+			console.log(p2.hasOwnProperty('name'))
+			console.log('name' in p1)
+			console.log(Person.prototype.isPrototypeOf(p1))
+			console.log(Object.getPrototypeOf(p1))
+			console.log(Object.getOwnPropertyNames(Person.prototype))
+			Person.prototype.sayHi = function() {
+				console.log('hi')
+			}
+			p1.sayHi()
+			Person.prototype = {
+				name: '斐斐',
+				age: 22,
+				gender: '女',
+			}
+			//原生对象的原型
+			String.prototype.startsWith = function(item) {
+				return this.indexOf(item) === 0
+			}
+			console.log('斐斐'.startsWith('斐'))
+			p1.friends.push('lhh')
+			console.log(p2.friends)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

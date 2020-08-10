@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .div1, .div2 {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        margin: 30px auto;
+      }
+      .div2 {
+        transform: translateY(-70px) rotateZ(45deg);
+      }
+      .div1 div, .div2 div{
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: lightskyblue;
+        border-radius: 50%;
+        animation: shink 1.4s infinite ease;
+      }
+      .div1 div:nth-child(1), 
+      .div2 div:nth-child(1) {
+        top: 0;
+        left: 0;
+      }
+      .div1 div:nth-child(2),
+      .div2 div:nth-child(2) {
+        top: 0em;
+        right: 0;
+      }
+      .div1 div:nth-child(3),
+      .div2 div:nth-child(3) {
+        bottom: 0;
+        left: 0;
+      }
+      .div1 div:nth-child(4),
+      .div2 div:nth-child(4) {
+        bottom: 0;
+        right: 0;
+      }
+      .div1 div:nth-child(1) { animation-delay: 0;}
+      .div2 div:nth-child(1) { animation-delay: -0.2s;}
+      .div1 div:nth-child(2) { animation-delay: -0.4s;}
+      .div2 div:nth-child(2) { animation-delay: -0.6s;}
+      .div1 div:nth-child(3) { animation-delay: -0.8s;}
+      .div2 div:nth-child(3) { animation-delay: -1.0s;}
+      .div1 div:nth-child(4) { animation-delay: -1.2s;}
+      .div2 div:nth-child(4) { animation-delay: -1.4s;}
+      @keyframes shink {
+        0% {transform: scale(.6);}
+        100% {transform: scale(.2);}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="div2">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>

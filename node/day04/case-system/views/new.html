@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <form action="/students/new" class="form m-5 w-25" method="POST">
+      <div class="form-group">
+        <label for="">姓名</label>
+        <input type="text" class="form-control" name="name" />
+      </div>
+      <div class="form-group">
+        <label for="">年龄</label>
+        <input type="number" class="form-control" name="age" />
+      </div>
+      <div class="form-group">
+        <label for="">性别</label><br>
+        <label class="radio-inline">
+          <input type="radio" name="gender" value="0" id="gender"/>
+          男
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="gender" value="1" id="gender"/>
+          女
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="">爱好</label>
+        <input type="text" class="form-control" name="hobbies" />
+      </div>
+      <button type="submit" class="btn btn-success">提交</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>鼠标移动</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+		<style type="text/css">
+			div {
+				border: 1px solid black;
+				width: 500px;
+				text-align: center;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				let moveArea = document.querySelector('.moveArea')
+				let showArea = document.querySelector('.showArea')
+				moveArea.onmousemove = event => {
+					showArea.innerText = 'x = ' + event.clientX + '; y = ' + event.clientY
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="moveArea m-2" style="height: 150px;"></div>
+		<div class="showArea m-2" style="height: 70px; line-height: 70px;"></div>
+	</body>
+</html>

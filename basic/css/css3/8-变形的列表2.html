@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图片</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      .list {
+        width: 802px;
+        height: 802px;
+        border: 1px solid black ;
+        padding: 10px;
+        margin: 20px auto;
+        overflow: hidden;
+        box-sizing: border-box;
+      }
+      li {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        float: left;
+        background: url("../img/img.png");
+        overflow: hidden;
+      }
+      li:nth-child(3n+1), li:nth-child(3n+2) {
+        margin-right: 15px;
+      }
+      li:nth-child(1),li:nth-child(2),li:nth-child(3),li:nth-child(4),li:nth-child(5),li:nth-child(6) {
+        margin-bottom: 15px;
+      }
+      .list-up,.list-down {
+        width: 400px;
+        height: 400px;
+        background: rgba(199,4,109,.5);
+        position: absolute;
+        transition: all 0.5s ease;
+        z-index: 1;
+      }
+      li:hover .list-up{
+        left: -200px;
+        transform:translateY(-190px) rotate(45deg) ;
+      }
+      .list-up {
+        left: -200px;
+        transform:translateY(-700px) rotate(45deg) ;
+      }
+      li:hover .list-down {
+        left: 50px;
+        transform:translateY(40px) rotate(45deg) ;
+      }
+      .list-down {
+        left: 50px;
+        transform:translateY(450px) rotate(45deg) ;
+      }
+      .content {
+        position: absolute;
+        width: 100%;
+        background: rgba(0, 0, 0, .5);
+        z-index: 99;
+        top: 60px;
+        color: white;
+        text-align: center;
+        transition: all 0.5s ease;
+        transform: rotateZ(45deg);
+        height: 0;
+        overflow: hidden;
+      }
+      .content h1 {
+        padding: 10px 0;
+      }
+      .content hr {
+        height: 3px;
+        background: white;
+      }
+      .content p {
+        margin-top: 10px;
+      }
+      li:hover .content {
+        transform: rotateZ(0);
+        height: 130px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="list">
+      <li>
+        <div class="list-down"></div>
+        <div class="content">
+          <h1>测试文字</h1>
+          <hr>
+          <p>测试段落测试段落测试段落测试段落测试段落</p>
+        </div>
+        <div class="list-up"></div>
+      </li>
+      <li>
+        <div class="list-down"></div>
+        <div class="content">
+          <h1>测试文字</h1>
+          <hr>
+          <p>测试段落测试段落测试段落测试段落测试段落</p>
+        </div>
+        <div class="list-up"></div>
+      </li>
+      <li>
+        <div class="list-down"></div>
+        <div class="content">
+          <h1>测试文字</h1>
+          <hr>
+          <p>测试段落测试段落测试段落测试段落测试段落</p>
+        </div>
+        <div class="list-up"></div>
+      </li>
+      <li>
+        <div class="list-down"></div>
+        <div class="content">
+          <h1>测试文字</h1>
+          <hr>
+          <p>测试段落测试段落测试段落测试段落测试段落</p>
+        </div>
+        <div class="list-up"></div>
+      </li>
+      <li>
+        <div class="list-down"></div>
+        <div class="content">
+          <h1>测试文字</h1>
+          <hr>
+          <p>测试段落测试段落测试段落测试段落测试段落</p>
+        </div>
+        <div class="list-up"></div>
+      </li>
+      <li>
+        <div class="list-down"></div>
+        <div class="content">
+          <h1>测试文字</h1>
+          <hr>
+          <p>测试段落测试段落测试段落测试段落测试段落</p>
+        </div>
+        <div class="list-up"></div>
+      </li>
+      <li>
+        <div class="list-down"></div>
+        <div class="content">
+          <h1>测试文字</h1>
+          <hr>
+          <p>测试段落测试段落测试段落测试段落测试段落</p>
+        </div>
+        <div class="list-up"></div>
+      </li>
+      <li>
+        <div class="list-down"></div>
+        <div class="content">
+          <h1>测试文字</h1>
+          <hr>
+          <p>测试段落测试段落测试段落测试段落测试段落</p>
+        </div>
+        <div class="list-up"></div>
+      </li>
+      <li>
+        <div class="list-down"></div>
+        <div class="content">
+          <h1>测试文字</h1>
+          <hr>
+          <p>测试段落测试段落测试段落测试段落测试段落</p>
+        </div>
+        <div class="list-up"></div>
+      </li>
+    </ul>
+  </body>
+</html>

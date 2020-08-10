@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function Person(name, age, gender) {
+				this.name = name
+				this.age = age
+				this.gender = gender
+				this.toString = function() {
+					return 'toString: [name: ' + name + ', age: ' + age + ', gender: ' + gender + ']' 
+				}
+			}
+			let girl = new Person('斐斐', 22, '女')
+			console.log(girl)
+			console.log(girl instanceof Object)
+			console.log(girl instanceof Person)
+			console.log(girl.toString())
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

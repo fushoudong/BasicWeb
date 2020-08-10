@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function() {
+				let list = document.querySelector('ul')
+				let hello = `<b>hello world</b>`
+				let buttons = document.querySelectorAll('button')
+				for(let i = 0; i < buttons.length; i++ ){
+					buttons[i].onclick = function() {
+						switch(i) {
+							case 0: 
+								list.insertAdjacentHTML('beforebegin', hello)
+								break;
+							case 1: 
+								list.insertAdjacentHTML('afterbegin', hello)
+								break;
+							case 2: 
+								list.insertAdjacentHTML('beforeend', hello)
+								break;
+							case 3: 
+								list.insertAdjacentHTML('afterend', hello)
+								break;
+							default: 
+								break;
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>list item 1</li>
+			<li>list item 2</li>
+			<li>list item 3</li>
+			<li>list item 4</li>
+		</ul>
+		<button type="button">beforebegin</button>
+		<button type="button">afterbegin</button>
+		<button type="button">beforeend</button>
+		<button type="button">afterend</button>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function() {
+				let list = document.getElementsByClassName('myList')[0]
+				document.addEventListener('DOMSubtreeModified', event => {
+					console.log(event.type)
+				}, false)
+				document.addEventListener('DOMNodeInserted', event => {
+					console.log(event.type)
+				}, false)
+				document.addEventListener('DOMNodeInsertedIntoDocument', event => {
+					console.log(event.type)
+				}, false)
+				document.addEventListener('DOMNodeRemoved', event => {
+					console.log(event.type)
+				}, false)
+				document.addEventListener('DOMNodeRemovedFromDocument', event => {
+					console.log(event.type)
+				}, false)
+				list.appendChild(document.createElement('li').appendChild(document.createTextNode('新添加的节点')))
+				list.parentNode.removeChild(list)
+			}
+		</script>
+	</head>
+	<body>
+		<ul class="myList">
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+		</ul>
+	</body>
+</html>

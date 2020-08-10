@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: red;
+        transition: all 2s ease;
+        margin-top: 30px;
+      }
+      .box1:hover {
+        transform: translateX(100px) rotateZ(45deg);
+        /* 旋转45°，沿着水平轴线行走100px */
+      }
+      .box2:hover {
+        /* 沿着45°转角前进100px */
+        transform: rotateZ(45deg) translateX(100px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>事件委托</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+		<script type="text/javascript">
+			window.onload = () => {
+				let list = document.getElementsByClassName('list-group')[0]
+				let add = document.getElementById('addNew')
+				list.onclick = function(event) {
+					console.log('clickList' + event.target.id)
+					switch(event.target.id) {
+						case '1':
+						case '2':
+						case '3':
+						case '4':
+						case '5':
+							alert('点击第' + event.target.id + '条')
+							break
+						default:
+							alert('点击新增的Item')
+							break
+					}
+				}
+				add.onclick = event => {
+					let li = document.createElement('li')
+					li.setAttribute('class', 'list-group-item')
+					li.appendChild(document.createTextNode('新添加的Item'))
+					list.appendChild(li)
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul class="list-group m-3 ml-auto mr-auto w-25 text-center">
+			<li class="list-group-item" id="1">List Item 1</li>
+			<li class="list-group-item" id="2">List Item 2</li>
+			<li class="list-group-item" id="3">List Item 3</li>
+			<li class="list-group-item" id="4">List Item 4</li>
+			<li class="list-group-item" id="5">List Item 5</li>
+		</ul>
+		<p class="mt-2 text-center">
+			<button type="button" id="addNew" class="btn btn-outline-danger">添加</button>
+		</p>
+	</body>
+</html>

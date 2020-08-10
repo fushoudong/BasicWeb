@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function() {
+				let form = document.querySelector('.form')
+				console.log(form.action)			
+				let submit = document.querySelector('button')
+				submit.onclick = function(event) {
+					event.preventDefault()
+					console.log(event)
+					form.submit()
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p class="p"></p>
+		<form action="https://www.baidu.com" method="post" name="post" class="form">
+			<input value="测试" type="text" />
+			
+			<input class="submit" type="submit" value="提交"/>
+		</form>
+		<button type="button">提交</button>
+	</body>
+</html>

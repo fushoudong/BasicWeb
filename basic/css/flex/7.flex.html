@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      .out {
+        display: flex;
+        width: 600px;
+        height: 400px;
+        border: 1px solid black;
+        margin: 100px auto;
+				text-align: center;
+				color: white;
+				font-size: 30px;
+				line-height: 100px;
+				flex-direction: row;
+				flex-wrap: wrap-reverse;
+				
+      }
+			.in {
+				/* width: 100px; */
+				background: #0000FF;
+				flex-shrink: 1;
+				margin: 10px;
+			}
+			.in:nth-child(2) {
+				flex-shrink: 0;
+			}
+    </style>
+  </head>
+  <body>
+    <div class="out">
+			<div class="in">1</div>
+			<div class="in">2</div>
+			<div class="in">3</div>
+			<div class="in">4</div>
+    </div>
+  </body>
+</html>

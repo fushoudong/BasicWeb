@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="list"></ul>
+    <article style="width: 100px; height: 100px; border: 1px solid black;" contenteditable></article>
+    <strike>哈哈</strike>
+    <table width="300" border="1" cellspacing="0">
+      <tr>
+        <td width="100" contenteditable>1</td>
+        <td width="100">2</td>
+        <td width="100">3</td>
+      </tr>
+    </table>
+    <script>
+      let db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
+      let list = document.getElementById('list')
+      // db.transaction(tx => {
+      //   tx.executeSql('drop table if exists logs')
+      // })
+      db.transaction(function(tx) {
+        tx.executeSql('create table if not exists logs (id unique, log)')
+        tx.executeSql('insert into logs values(3,22)')
+        tx.executeSql('insert into logs values(4,"shiyifei")')
+        // tx.executeSql('insert into logs values(?,?)',[2,'小斐斐'])
+      })
+      db.transaction(tx => {
+        tx.executeSql('select * from logs', [], (tx, result) => {
+          console.log(result)
+          for(let i = 0; i < result.rows.length; i ++ ) {
+            let li = document.createElement('li')
+            li.innerText =  `key: ${result.rows[i].id}~value:${result.rows[i].log}`
+            list.appendChild(li)
+          }
+        })
+      })
+    </script>
+  </body>
+</html>

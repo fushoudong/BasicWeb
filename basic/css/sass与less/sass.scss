@@ -1,0 +1,11 @@
+ // scss注释
+ /*scss注释*/
+ $width: 400px;
+ $key: margin;
+ $i: 1;
+ .box#{$i} {
+	 width: $width;
+	 height: $width;
+	 3{$key}: auto;
+	 background: black;
+ }

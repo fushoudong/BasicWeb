@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      div.test
+      {
+        white-space:nowrap;
+        width:12em;
+        overflow:hidden;
+        border:1px solid #000000;
+      }
+      .ellipsis {
+        text-overflow: ellipsis;
+      }
+      .clip {
+        text-overflow: clip;
+      }
+      .arrow {
+        /*火狐支持*/
+        text-overflow: '00>>';
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test ellipsis">This is some long text that will not fit in the box</div>
+    <div class="test clip">This is some long text that will not fit in the box</div>
+    <div class="test arrow">This is some long text that will not fit in the box</div>
+  </body>
+</html>

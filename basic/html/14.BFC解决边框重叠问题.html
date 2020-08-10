@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        overflow: hidden;
+      }
+      .div1 {
+        width: 100px;
+        height: 100px;
+        background: gray;
+        margin-bottom: 30px;
+      }
+      .div2 {
+        width: 100px;
+        height: 100px;
+        background: gray;
+        margin-top: 30px;
+      }
+      .out {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+      通过给其中一个块级元素添加嵌套，嵌套的父级元素满足BFC规范，消除间距重叠
+     -->
+    <div class="div1"></div>
+    <div class="out">
+      <div class="div2"></div>
+    </div>
+    
+  </body>
+</html>

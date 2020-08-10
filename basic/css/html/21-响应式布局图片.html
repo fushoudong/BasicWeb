@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      .responsive {
+        width: 100%;
+        overflow: hidden;
+      }
+      .img {
+        float: left;
+        margin: 10px;
+        border: 1px solid #CCC;
+        border-radius: 15px;
+      }
+      .img:hover {
+        border: 1px solid #000;
+        margin-top: 5px;
+        box-shadow: 0 0 6px 6px #CCC;
+      }
+      .img img {
+        border-radius: 15px 15px 0 0;
+        width: 100%;
+        height: 100%;
+      }
+      .desc {
+        text-align: center;
+        line-height: 50px;
+        height: 50px;
+        font-size: 30px;
+      }
+      @media only screen and (max-width: 667px){
+        .responsive {
+          width: 100%;
+          margin: 6px auto;
+        }
+        .img {
+          width: 100%;
+          float: left;
+        }
+      }
+      @media only screen and (min-width: 800px){
+        .responsive {
+          width: 100%;
+          margin: 6px auto;
+        }
+        .img {
+          width: calc(50% - 24px);
+          float: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="responsive">
+      <div class="img">
+        <img src="../img/demo1.jpg" alt="demo1" />
+        <div class="desc">Add a description of the image here</div>
+      </div>
+      <div class="img">
+        <img src="../img/img_fjords.jpg" alt="demo2" />
+        <div class="desc">Add a description of the image here</div>
+      </div>
+      <div class="img">
+        <img src="../img/img_forest.jpg" alt="demo3" />
+        <div class="desc">Add a description of the image here</div>
+      </div>
+      <div class="img">
+        <img src="../img/img_mountains.jpg" alt="demo4" />
+        <div class="desc">Add a description of the image here</div>
+      </div>
+    </div>
+  </body>
+</html>

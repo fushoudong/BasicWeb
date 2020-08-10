@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .out {
+        width: 500px;
+        height: 200px;
+        border: 1px solid black;
+        margin: 100px auto;
+        perspective: 700px;
+      }
+      .list {
+        width: 128px;
+        height: 94px;
+        margin: 53px auto;
+        position: relative;
+        transition: all 3s ease;
+        transform-style: preserve-3d;
+      }
+      .out:hover .list {
+        transform: rotateY(360deg);
+      }
+      .list li {
+        position: absolute;
+        width: 128px;
+        height: 94px;
+      }
+      .list li:nth-child(1) {
+        background: url("../img2/1.jpg");
+        transform: translateZ(150px);
+      }
+      .list li:nth-child(2) {
+        background: url("../img2/2.jpg");
+        transform: rotateY(60deg) translateZ(150px);
+      }
+      .list li:nth-child(3) {
+        background: url("../img2/3.jpg");
+        transform: rotateY(120deg) translateZ(150px);
+      }
+      .list li:nth-child(4) {
+        background: url("../img2/4.jpg");
+        transform: rotateY(180deg) translateZ(150px);
+      }
+      .list li:nth-child(5) {
+        background: url("../img2/5.jpg");
+        transform: rotateY(240deg) translateZ(150px);
+      }
+      .list li:nth-child(6) {
+        background: url("../img2/6.jpg");
+        transform: rotateY(300deg) translateZ(150px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="out">
+      <ul class="list">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </body>
+</html>

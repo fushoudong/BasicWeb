@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+      ul {
+        width: 250px;
+        list-style: none;
+        margin: 100px auto;
+      }
+      li {
+        position: relative;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        overflow: hidden;
+        border-bottom: 1px dotted black;
+      }
+      li img {
+        float: left;
+        margin-right: 15px;
+      }
+      li .test {
+        float: left;
+        width: 100px;
+        padding-top: 5px;
+      }
+      .bottom {
+        color: white;
+        top: 100px;
+        z-index: 1;
+        position: absolute;
+        left: 35px;
+        transition: all 1.5s ease;
+      }
+      .border {
+        position: absolute;
+        width: 50px;
+        height: 100px;
+        transform: translateY(-130px);
+        border: 1px solid white;
+        transition: all 1s ease;
+      }
+      li:hover .bottom{
+        transform: translateY(-60px);
+      }
+      li:hover .border {
+        transform: translate(36px, -5px) rotateZ(90deg);
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <div class="border"></div>
+        <img src="../img2/1.jpg">
+        <div class="test">测试文字测试文字测试文字测试文字测试文字测试文字</div>
+        <span class="bottom">陌陌上市</span>
+      </li>
+      <li>
+        <div class="border"></div>
+        <img src="../img2/1.jpg">
+        <div class="test">测试文字测试文字测试文字测试文字测试文字测试文字</div>
+        <span class="bottom">陌陌上市</span>
+      </li>
+      <li>
+        <div class="border"></div>
+        <img src="../img2/1.jpg">
+        <div class="test">测试文字测试文字测试文字测试文字测试文字测试文字</div>
+        <span class="bottom">陌陌上市</span>
+      </li>
+      <li>
+        <div class="border"></div>
+        <img src="../img2/1.jpg">
+        <div class="test">测试文字测试文字测试文字测试文字测试文字测试文字</div>
+        <span class="bottom">陌陌上市</span>
+      </li>
+    </ul>
+  </body>
+</html>

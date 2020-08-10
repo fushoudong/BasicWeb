@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .content {
+        display: flex;
+      }
+      fieldset {
+        flex: 1;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <fieldset>
+        <legend>基础表单</legend>
+        <form action="" method="POST" enctype="application/x-www-form-urlencoded">
+          <p>文本框：<input type="text" autocomplete/></p>
+          <p>密码框：<input type="password" autofocus></p>
+          <p>单选：
+            <input type="radio" name="sex"/>男
+            <input type="radio" name="sex"/>女
+          </p>
+          <p>复选框：
+            <input type="checkbox" name="box">游泳
+            <input type="checkbox" name="box">跑步
+            <input type="checkbox" name="box">羽毛球
+            <input type="checkbox" name="box">阅读
+          </p>
+          <p>选择文件：<input type="file" name="file" id=""></p>
+          <p>下拉框：
+            <select>
+              <option value="将故事写成我们">将故事写成我们</option>
+              <option value="对的时间点">对的时间点</option>
+              <option value="那些你很冒险的梦">那些你很冒险的梦</option>
+            </select>
+          </p>
+          <p>允许输入的选择框：
+            <input list="browers">
+            <datalist id="browers">
+              <option value="chrome">chrome</option>
+              <option value="firefox">firefox</option>
+              <option value="edge">edge</option>
+            </datalist>
+          </p>
+          <textarea name="textarea" id="" cols="30" rows="10"></textarea>
+          <p>按钮：<input type="button" value="按钮"></p>
+          <p>提交：<input type="submit" value="提交"></p>
+          <p>重置：<input type="reset" value="重置"></p>
+        </form>
+      </fieldset>
+      <fieldset>
+        <legend>其他类型</legend>
+        <form action="">
+          <p>数字：<input type="number" max="30"></p>
+          <p>范围：<input type="range" max="30" min="0" step="2" value="3"></p>
+          <p>日期：<input type="date" name="date" id=""></p>
+          <p>周：<input type="week" name="week" id=""></p>
+          <p>月：<input type="month" name="" id=""></p>
+          <p>颜色：<input type="color" name="" id=""></p>
+          <p>电话：<input type="tel" name="" id=""></p>
+          <p>邮箱：<input type="email" name="" id=""></p>
+        </form>
+      </fieldset>
+    </div>
+  </body>
+</html>

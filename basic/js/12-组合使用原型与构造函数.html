@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function Person(name, age, gender, friends) {
+				this.name = name
+				this.age = age
+				this.gender = gender
+				this.friends = friends
+			}
+			Person.prototype.toString = function() {
+				return 'toString: [name: ' + this.name + ', age: ' + this.age + ', gender: ' + this.gender + ']' + 'friends: [' + this.friends.join(',') + ']'
+			}
+			let p1 = new Person('斐斐', 22, '女', ['fz'])
+			let p2 = new Person('小斐斐', 23, '女', ['xfz'])
+			p1.friends.push('fsd')
+			console.log('-----')
+			console.log(p1.toString())
+			console.log(p2.toString())
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

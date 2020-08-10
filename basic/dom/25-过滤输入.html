@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = () => {
+				let input = document.getElementById('numberInput')
+				input.addEventListener('keypress', event => {
+					console.log(event)
+					let charCode = event.charCode
+					if(!/\d/.test(String.fromCharCode(charCode))) {
+						event.preventDefault()
+					}
+				}, false)
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" placeholder="输入必须是数字" id="numberInput" />
+	</body>
+</html>

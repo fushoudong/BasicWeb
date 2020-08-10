@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>生生</title>
+		<script type="text/javascript">
+			window.onload = () => {
+				let p = document.querySelector('p')
+				let text = p.firstChild
+				text.appendData('我很我')
+				text.deleteData(12,3)
+				text.replaceData(12,3, '生生灯火，明暗无辄')
+				console.log(text.substringData(12,33))
+				let div = document.createElement('div')
+				document.body.appendChild(div)
+				let t1 = document.createTextNode('冷的天色')
+				let t2 = document.createTextNode('，你是否多穿一件呢')
+				div.appendChild(t1)
+				div.appendChild(t2)
+				div.normalize()
+				
+			}
+		</script>
+	</head>
+	<body>
+		<p>生生不息你和我，倒数迂回的伤痕却不能为你做什么</p>
+	</body>
+</html>

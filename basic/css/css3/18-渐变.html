@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        height: 100px;
+        width: 100px;
+        line-height: 100px;
+        text-align: center;
+        margin-right: 10px;
+        margin-left: 10px;
+        float: left;
+        color: white;
+      }
+      .default {
+        background: linear-gradient(red, blue);
+      }
+      .right {
+        background: linear-gradient(to right, blue, red);
+      }
+      .rightTop {
+        background: linear-gradient(to right top, red, blue);
+      }
+      .startEnd {
+        background: linear-gradient(to right, red 25%, blue 75%);
+      }
+      .twoColor {
+        background: linear-gradient(to right top, red 50%, blue 50%);
+      }
+      .circle {
+        background: radial-gradient(red, blue);
+      }
+      .circleMultip {
+        background: radial-gradient(red, orange 17%, blue 34%, green 51%, lightblue 68%, blue 85%, purple 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="default">默认</div>
+    <div class="right">right</div>
+    <div class="rightTop">rightTop</div>
+    <div class="startEnd">startEnd</div>
+    <div class="twoColor">twoColor</div>
+    <div class="circle">circle</div>
+    <div class="circleMultip">circleMultip</div>
+  </body>
+</html>

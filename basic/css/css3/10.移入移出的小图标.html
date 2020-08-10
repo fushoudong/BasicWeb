@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>移入移出的小图标</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      ul {
+        height: 50px;
+        width: 150px;
+        overflow: hidden;
+        margin: 200px auto;
+      }
+      li {
+        width: 50px;
+        height: 50px;
+        float: left;
+      }
+      li:nth-child(1) {
+        background: url("../img/1.png");
+        background-repeat: no-repeat;
+        background-position: 14px 15px;
+      }
+      li:nth-child(2) {
+        background: url("../img/2.png");
+        background-repeat: no-repeat;
+        background-position: 14px 15px;
+      }
+      li:nth-child(3) {
+        background: url("../img/3.png");
+        background-repeat: no-repeat;
+        background-position: 14px 15px;
+      }
+      li:hover {
+        animation: move .5s ease;
+      }
+      @keyframes move {
+        0% {background-position: 14px 15px ;}
+        50% {background-position: 14px -50px ;}
+        51% {background-position: 14px 50px ;}
+        100% {background-position: 14px 15px ;}
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </body>
+</html>

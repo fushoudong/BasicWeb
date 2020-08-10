@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .out {
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+      }
+      .in {
+        width: 100px;
+        height: 100px;
+        background: red;
+        transition: all 1s ease;
+      }
+      .out:hover .in {
+        transform: translateY(120px);
+      }
+      .div1,.div2 {
+        width: 100px;
+        height: 100px;
+        background: red;
+        transition: all 1s ease;
+      }
+      .div1 {
+        animation: before 1s infinite ease-in-out;
+      }
+      .div2 {
+        animation: after 1s infinite ease-in-out;
+      }
+      @keyframes before {
+        0%{}
+        100%{transform: translateX(100px) rotateZ(45deg);}
+      }
+      @keyframes after {
+        0%{}
+        100%{transform: rotateZ(45deg) translateX(100px);}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="out">
+      <div class="in"></div>
+      FeiFei
+    </div>
+    <div class="div1"></div>
+    <div class="div2"></div>
+  </body>
+</html>

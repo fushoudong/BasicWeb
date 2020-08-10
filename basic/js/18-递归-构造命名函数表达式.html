@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function factorical(num) {
+				return(function fn(num) {
+					if(num === 1) return 1
+					else {
+						return num * fn(num - 1)
+					}
+				})
+			}
+			console.log(factorical()(10))
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

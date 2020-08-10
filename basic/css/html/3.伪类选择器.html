@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      ul {
+        margin: 100px auto;
+        width: 523px;
+        height: 40px;
+      }
+      ul li {
+        float: left;
+        width: 130px;
+        margin-right: 1px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background: url("../../images/btna.jpg");
+        color: #eeeeee;
+      }
+      ul li:nth-child(4) {
+        margin: 0;
+      }
+      ul li:first-child {
+        border-radius: 6px 0 0 6px;
+      }
+      ul li:last-child {
+        border-radius: 0 6px 6px 0;
+      }
+      ul li:hover {
+        background: url("../../images/btnsahover.jpg");
+        cursor: pointer;
+        color: white;
+      }
+      input:checked {
+        color: rebeccapurple;
+      }
+      input:disabled {
+        color: blue;
+      }
+      .fei {
+        color: pink;
+      }
+      .fei::before {
+        content: "小付砸";
+        color: blue;
+      }
+      .fei::after {
+        content: "斐斐";
+        color: red;
+      }
+      ol {
+        border: 1px solid black;
+      }
+      ol li:nth-child(2n+1) {
+        background: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>首页</li>
+      <li>关于</li>
+      <li>详情</li>
+      <li>联系我们</li>
+    </ul>
+    <input type="checkbox" name="box" id="">游泳
+    <input type="checkbox" name="box" id="">跑步
+    <input type="text" name="" placeholder="禁用" value="测试" disabled>
+    <div class="fei">❤</div>
+    
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        margin-left: 30px;
+        margin-bottom: 10px;
+      }
+      .deg0 {
+        /*下到上*/
+        background: linear-gradient(0deg, orange, lightskyblue);
+      }
+      .deg90 {
+        /*左到右*/
+        background: linear-gradient(90deg, orange, lightskyblue);
+      }
+      .deg180 {
+        /*下到上*/
+        background: linear-gradient(180deg, orange, lightskyblue);
+      }
+      .deg-90 {
+        /*右到左*/
+        background: linear-gradient(-90deg, orange, lightskyblue);
+      }
+      .deg-random {
+        background: linear-gradient(140deg, orange, lightseagreen);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box deg0"></div>
+    <div class="box deg90"></div>
+    <div class="box deg180"></div>
+    <div class="box deg-90"></div>
+    <div class="box deg-random"></div>
+  </body>
+</html>

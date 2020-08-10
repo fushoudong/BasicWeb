@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      td,
+      th {
+        width: 84px;
+      }
+      tr:hover {
+        background: yellowgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1" cellspacing="0.1" bordercolor="red" cellpadding="3">
+      <caption>
+        新加表格
+      </caption>
+      <colgroup>
+        <col span="1" bgcolor="blue" align="center" />
+        <col span="3" />
+        <col span="1" bgcolor="yellow" />
+      </colgroup>
+      <thead>
+        <tr bgcolor="#e0e0e0">
+          <th>姓名</th>
+          <th>高数</th>
+          <th>线代</th>
+          <th>数据库</th>
+          <th>总分</th>
+        </tr>
+      </thead>
+      <tbody align="center">
+        <tr valign="bottom">
+          <td>一斐</td>
+          <td>90</td>
+          <td>90</td>
+          <td>90</td>
+          <td>270</td>
+        </tr>
+        <tr>
+          <td>斐斐</td>
+          <td>90</td>
+          <td>90</td>
+          <td>90</td>
+          <td>270</td>
+        </tr>
+        <tr>
+          <td>乐斐</td>
+          <td>90</td>
+          <td>90</td>
+          <td>90</td>
+          <td>270</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>汇总</td>
+          <td colspan="4" align="right">810</td>
+        </tr>
+      </tfoot>
+    </table>
+    <table border="2" cellspacing="0" cellpadding="2" bordercolor="#0000FF">
+      <caption>
+        天气预报
+      </caption>
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>天气</th>
+          <th>出行状况</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1月1日</td>
+          <td>晴</td>
+          <td>适合出行</td>
+        </tr>
+        <tr>
+          <td>1月2日</td>
+          <td>阴转小雨</td>
+          <td>不适外出</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td rowspan="2">类别：</td>
+          <td colspan="2">925银饰</td>
+        </tr>
+        <tr>
+          <td colspan="2">银链手镯</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

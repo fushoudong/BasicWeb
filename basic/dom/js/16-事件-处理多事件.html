@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function() {
+				let button = document.getElementsByTagName('button')[0]
+				let handler = function(event) {
+					switch(event.type) {
+						case 'click':
+							alert('我爱斐斐')
+							break;
+						case 'mouseover': 
+							event.target.style.background = 'red'
+							break;
+						case 'mouseout':
+							event.target.style.background = ""
+							break;
+						default: 
+							break;
+					}
+				}
+				button.onclick = handler
+				button.onmouseover = handler
+				button.onmouseout = handler
+			}
+		</script>
+	</head>
+	<body>
+		<button type="button">按钮</button>
+	</body>
+</html>

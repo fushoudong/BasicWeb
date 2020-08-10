@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 300px;
+				height: 100px;
+				text-align: center;
+				border: 1px solid black;
+				line-height: 100px;
+				font-size: 20px;
+			}
+			.red {
+				color: red;
+			}
+			.italic {
+				font-style: italic;
+			}
+			.bold {
+				font-weight: bold;
+			}
+			.family {
+				font-family: '楷体';
+			}
+			.blue {
+				color: blue;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				let div = document.querySelector('div')
+				console.log(div.classList)
+				let buttons = document.querySelectorAll('button')
+				for(let i = 0; i < buttons.length; i++ ){
+					buttons[i].onclick = function() {
+						switch(i) {
+							case 0: 
+								div.classList.remove('family')
+								break;
+							case 1: 
+								div.classList.add('blue')
+								div.classList.remove('red')
+								break;
+							case 2: 
+								div.classList.toggle('italic')
+								break;
+							case 3: 
+								document.querySelector('p').innerText = div.classList.contains('red')
+								break;
+							default: 
+								break;
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="red family bold italic">
+			每个逐渐暗下来的夜，一起走过
+		</div>
+		<button type="button">removeFamily</button>
+		<button type="button">addLine</button>
+		<button type="button">toggleItalic</button>
+		<button type="button">ContainsRed</button>
+		<p></p>
+	</body>
+</html>

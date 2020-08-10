@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="area">信息：</p>
+    <button onclick="startWorker()">startWorker</button>
+    <button onclick="stopWorker()">stopWorker</button>
+    <p><strong>注意：</strong> Internet Explorer 9 及更早 IE 版本浏览器不支持 Web Workers.</p>
+    <script>
+      let w
+      function startWorker() {
+        if(Worker !== undefined) {
+          if(w === undefined) {
+            w = new Worker("demo_worker.js")
+          }
+          w.onmessage = function(event) {
+            document.getElementById("area").innerHTML = 1
+          }
+        }else {
+          document.getElementById("area").innerHTML = "<p>很抱歉，您的浏览器不支持Web Worker</p>"
+        }
+      }
+      function stopWorker() {
+        w.terminate()
+        w = undefined
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin-bottom: 20px;
+        line-height: 100px;
+        text-align: center;
+        animation: move 1s .2s infinite ease;
+      }
+      .none {
+        animation-fill-mode: none;
+      }
+      .backwards {
+        animation-fill-mode: backwards;
+      }
+      .forwards {
+        animation-fill-mode: forwards;
+      }
+      .both {
+        animation-fill-mode: both;
+      }
+      .normal {
+        animation-direction: normal;
+      }
+      .alternate {
+        animation-direction: alternate;
+      }
+      .reserve {
+        animation-direction: reverse;
+      }
+      @keyframes move {
+        0% {background: blue;}
+        100% {transform: translateX(200px);}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="none">none</div>
+    <div class="backwards">backwards</div>
+    <div class="forwards">forwards</div>
+    <div class="both">both</div>
+    <div class="normal">normal</div>
+    <div class="reserve">reserve</div>
+    <div class="alternate">alternate</div>
+  </body>
+</html>

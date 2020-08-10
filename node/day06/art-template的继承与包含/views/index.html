@@ -1,0 +1,26 @@
+{{extend './layout.html'}}
+
+{{block 'head'}}
+  <style>
+    h1 {
+      color: blue;
+    }
+  </style>
+{{ /block}}
+
+{{block 'content'}}
+  <div>
+    <h1 class="h1">
+      继承内容的一级标题
+    </h1>
+  </div>
+{{/block}}
+
+{{block 'script'}}
+  <script>
+    console.log('引用index',$)
+    $('.h1').on('click', (event) => {
+      alert('点击h1')
+    })
+  </script>
+{{/block}}

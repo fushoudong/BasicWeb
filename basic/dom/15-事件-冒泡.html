@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = () => {
+				let button = document.getElementsByTagName('button')[0]
+				let box = document.getElementsByClassName('box')[0]
+				button.onclick = (event) => {
+					event.stopPropagation()
+					console.log('button clicked!')
+				}
+				box.onclick = (event) => {
+					console.log('div clicked!')
+				}
+				function showUsername(event) {
+					console.log(event.target.value)
+				}
+			}
+			function useFun(event) {
+				event.stopPropagation()
+				console.log('I love Feifei', event.target.innerText)
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box" style="width: 100px; height: 100px; text-align: center;">
+			<button type="button">clickMe</button>
+			<button type="button" onclick="useFun(event)">useFunction</button>
+		</div>
+		<form action="#" method="post">
+			<input type="text" name="username" value="username" />
+			<input type="button" value="点击" onclick="alert(username.value)"/>
+			<!-- 可以直接使用input的name获取value -->
+		</form>
+	</body>
+</html>

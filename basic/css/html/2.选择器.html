@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        width: 100px;
+      }
+      ul li {
+        color: cadetblue;
+      }
+      li>b {
+        /* 选择直接子类 */
+        color: rebeccapurple;
+      }
+      .bro+p {
+        color: blue;
+      }
+      [class~=bold] {
+        font-weight: bold;
+        font-size: 20px;
+      }
+      .red {
+        color: red;
+      }
+      .blue {
+        color: blue;
+      }
+      .italic {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="bold">
+      <li>水果</li>
+      <li><b>蔬菜</b></li>
+      <li><p><b>瓜果</b></p></li>
+    </ul>
+    <div>
+      <p class="bro">目标</p>
+      <p>兄弟1</p>
+      <p>兄弟2</p>
+      <p>兄弟3</p>
+      <p>兄弟4</p>
+    </div>
+    <p class="red bold">红色粗体</p>
+    <p class="blue bold">蓝色粗体</p>
+    <p class="italic bold">斜粗体</p>
+  </body>
+</html>

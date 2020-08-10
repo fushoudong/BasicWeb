@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+		<style type="text/css">
+			.box {
+				width: 100px;
+				height: 100px;
+				background: #002752;
+				transition: all 1s ease;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				let update = document.querySelectorAll('.btn')[0]
+				let get = document.querySelectorAll('.btn')[1]
+				let box = document.querySelector('.box')
+				update.onclick = function(event) {
+					box.style.width = '200px'
+					box.style.height = '200px'
+					box.style.background = 'linear-gradient(90deg, red, orange)'
+				}
+				get.onclick = function(event) {
+					alert(box.style.cssText)
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p class="m-2">
+			<button type="button" class="btn btn-primary">修改</button>
+			<button type="button" class="btn btn-danger">获取</button>
+		</p>
+		<div class="box m-2">
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>跟随移动</title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			.moveBox {
+				width: 75px;
+				height: 75px;
+				position: absolute;
+				background: rgba(0,0,0, .4);
+				transform: translate(-50%, -50%);
+				cursor: move;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = () => {
+				let box = document.querySelector('.moveBox')
+				document.onmousemove = event => {
+					box.style.left = event.clientX + 'px'
+					box.style.top = event.clientY + 'px'
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="moveBox">
+			
+		</div>
+	</body>
+</html>

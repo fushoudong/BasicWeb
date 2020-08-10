@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .content {
+        display: flex;
+      }
+      fieldset {
+        flex: 1;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <fieldset>
+        <legend>标题</legend>
+        <h1>标题</h1>
+        <h2>标题</h2>
+        <h3>标题</h3>
+        <h4>标题</h4>
+        <h5>标题</h5>
+        <h6>标题</h6>
+        <p>段落</p>
+      </fieldset>
+      <fieldset>
+        <legend>格式化标签</legend>
+        <p>粗体：<strong>strong</strong>~<b>b</b></p>
+        <p>斜体：<em>em</em>~<i>i</i></p>
+        <p>姓名：<u>史一斐</u>~<ins>女朋友</ins></p>
+        <p>a<sup>2</sup>+b<sup>2</sup>=c<sup>2</sup></p>
+        <p>H<sub>2</sub>SO<sub>4</sub></p>
+        <p><big>大字体</big><small>小字体</small><br><big><big>更大</big><small><small>更小</small></small></big></p>
+      </fieldset>
+      <fieldset>
+        <legend>字体font</legend>
+        <p><font color="red">red</font></p>
+        <p><font size="6">red</font></p>
+        <p><font face="楷体">red</font></p>
+        <hr size="3" width="100" color="gray" align="right">
+      </fieldset>
+      <fieldset>
+        <p>空格：&nbsp;~缩进：&emsp13;~引号：&quot;~&：&amp;</p>
+        <p>&nlt;&copy;;&gt;</p>
+      </fieldset>
+      <fieldset>
+        <legend>引用标签</legend>
+        <blockquote>
+          你的一字一句犹如刀疤划心上
+          我的一举一动随你改变多荒唐
+          任你肆意玩弄 从没去想
+          你是有多嚣张
+          我的心脏脉搏为你跳动为你狂
+          你说我真的多余不如离开流浪
+          都怪我 没治愈我的伤
+        </blockquote>
+        <q>这是小段引用</q><br>
+        <cite>引用著作的标题</cite>
+        <address>地址信息</address>
+        <abbr title="wtc">World Trade Center</abbr>
+      </fieldset>
+    </div>
+    <div class="content">
+      <fieldset>
+        <legend>代码</legend>
+        <pre>
+          <code>let x = 'jar'</code>
+          <code>console.log(x)</code>
+        </pre>
+      </fieldset>
+      <fieldset>
+        <legend>ruby与rt</legend>
+        <ruby>斐<rt>fěi</rt>斐<rt>fei</rt></ruby>
+        <p>文字反向：<bdo dir="rtl">文字反向显示部分</bdo></p>
+      </fieldset>
+    </div>
+  </body>
+</html>

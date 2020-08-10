@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .content {
+        border: 1px solid black;
+        width: fit-content;
+        display: inline-block;
+      }
+      .box1 {
+        float: left;
+        height: 100px;
+        width: 100px;
+        background: red;
+      }
+      .box2 {
+        float: left;
+        height: 200px;
+        width: 200px;
+        background: blue;
+      }
+      .content::after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="box1"></div>
+      <div class="box2"></div>
+    </div>
+    <span>aaaa</span>
+  </body>
+</html>

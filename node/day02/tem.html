@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="node_modules/art-template/lib/template-web.js"></script>
+  <script type="text/template" id="tpl">
+    大家好，我叫： {{ name }}<br>
+    我今年 {{ age }} 岁了<br>
+    我来自 {{ province }}<br>
+    我喜欢：{{each hobbies}} {{ $value }} {{/each}}
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    let ret = template('tpl', {
+      name: 'feifei',
+      age: 22,
+      province: '山西省',
+      hobbies: [
+        '唱歌',
+        '运动',
+        '看书'
+      ]
+    })
+    document.getElementById('app').innerHTML = ret
+  </script>
+</body>
+</html>

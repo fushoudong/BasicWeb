@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>元素遍历</title>
+		<script type="text/javascript">
+			window.onload = () => {
+				let ul = document.querySelector('ul')
+				console.log(ul)
+				console.log(ul.childElementCount)
+				let lists = [], i = 0, child = ul.firstChild
+				while(i < ul.childNodes.length) {
+					if(child.nodeType === 1) {
+						lists.push(child)
+					}else {
+						console.log(child.nodeName + i)
+					}
+					child = child.nextSibling
+					i ++ 
+				}
+				console.log(lists)
+			}
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>list item1</li>
+			<li>list item2</li>
+			<li>list item3</li>
+			<li>list item4</li>
+			<li>list item5</li>
+			<li><p>这是一个段落</p></li>
+		</ul>
+	</body>
+</html>

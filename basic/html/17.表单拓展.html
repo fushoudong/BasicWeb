@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 28px;
+        height: 28px;
+      }
+      .box input {
+        display: none;
+      }
+      .box div {
+        width: 28px;
+        height: 28px;
+        background: url(../images/checkbox.png);
+      }
+      .box input:checked + div { /*监控checked状态同级选择器*/
+        background-position: 0 -28px; 
+      }
+      .upload {
+        width: 84px;
+        height: 34px;
+      }
+      .upload input {
+        display: none;
+      }
+      .upload div {
+        width: 84px;
+        height: 34px;
+        background: url(../images/upload.png);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label class="box">
+        <input type="checkbox">
+        <div></div>
+      </label>
+    </div>
+    <div>
+      <label class="upload">
+        <input type="file"/>
+        <div></div>
+      </label>
+      
+    </div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+       .out {
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+      }
+      .in {
+        background: red;
+        width: 100px;
+        height: 100px;
+        transition: all 1s ease-in-out;
+        transform-origin: 0 0;
+        cursor: pointer;
+        background: url("../img2/img2.jpg");
+        background-size: contain;
+      }
+      .in:hover {
+        transform: skew(45deg) rotateZ(30deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="out">
+      <div class="in"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="300" height="200" style="border: 1px solid black"/>
+  </body>
+  <script>
+    let canvas = document.getElementById('myCanvas')
+    let ctx = canvas.getContext("2d")
+    ctx.fillStyle = "#FF0000"
+    // ctx.fillRect(0,0,150,75)
+    // ctx.moveTo(0,0)
+    // ctx.lineTo(200,100)
+    // ctx.stroke()
+    ctx.font="30px 楷体"
+    ctx.fillText('我爱小斐斐',20,50)
+    ctx.strokeText('一生一世', 30, 90)
+  </script>
+</html>

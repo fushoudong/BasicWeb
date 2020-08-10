@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>自动切换焦点</title>
+		<script type="text/javascript">
+			window.onload = () => {
+				function changeTab(event) {
+					let target = event.target
+					let form = target.form
+					console.log(target)
+					if(target.value.length === target.maxLength) {
+						for(let i = 0; i < form.elements.length; i++) {
+							if(form.elements[i] === target) {
+								if(form.elements[i + 1]) {
+									form.elements[i + 1].focus()
+								}
+								return
+							}
+						}
+					}
+				}
+				let tel1 = document.getElementsByName('tel1')[0]
+				let tel2 = document.getElementsByName('tel2')[0]
+				let tel3 = document.getElementsByName('tel3')[0]
+				tel1.onkeyup = changeTab
+				tel2.onkeyup = changeTab
+				tel3.onkeyup = changeTab
+			}
+		</script>
+	</head>
+	<body>
+		<form>
+			<input type="text" name="tel1" maxlength="3" />
+			<input type="text" name="tel2" maxlength="3" />
+			<input type="text" name="tel3" maxlength="4" />			
+		</form>
+	</body>
+</html>

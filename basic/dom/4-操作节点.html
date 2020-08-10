@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function() {
+				let list = document.getElementsByTagName('ul')[0]
+				let list2 = document.getElementsByClassName('list')[0]
+				console.log(list)
+				let newLi = document.createElement('li')
+				newLi.appendChild(document.createTextNode('这是一个新的li'))
+				list.insertBefore(newLi, list.children[2])
+				list.appendChild(list.children[1])
+				// firstChild为文本节点
+				list2.removeChild(list2.children[3])
+				list.replaceChild(list2.children[2].cloneNode(true), list.children[3])
+			}
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<ul class="list">
+			<li>11</li>
+			<li>22</li>
+			<li>33</li>
+			<li>44</li>
+		</ul> 
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>拖拽效果</title>
+		<style type="text/css">
+			.drag {
+				width: 100px;
+				height: 100px;
+				background: linear-gradient(180deg, pink, blue);
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = () => {
+				let drag = document.querySelector('.drag')
+				drag.onmousedown = event => {
+					console.log('按下鼠标')
+					let ol = event.clientX - event.target.offsetLeft
+					let ot = event.clientY - event.target.offsetTop
+					document.onmousemove = event => {
+					drag.style.left = event.clientX - ol + 'px'
+					drag.style.top = event.clientY - ot + 'px'
+				}
+				}
+				drag.onmouseup = event => {
+					document.onmousemove = null
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="drag">
+			
+		</div>
+	</body>
+</html>

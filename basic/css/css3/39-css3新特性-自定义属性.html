@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			:root {
+				--r: red;
+				--lg: #d3d3d3;
+				--size: 20px;
+				--content: '爱斐斐'
+			}
+			div {
+				width: 100px;
+				height: 100px;
+				border: 1px solid var(--r);
+				background: var(--lg);
+			}
+			div::after {
+				content: var(--content);
+				display: block;
+				background: #00FFFF;
+				width: 20px;
+				margin-left: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			我
+		</div>
+	</body>
+</html>

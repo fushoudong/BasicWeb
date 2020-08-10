@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="info">这里将展示信息</div>
+    <button onclick="getLocation()">获取地理坐标</button>
+    <script>
+      var x = document.getElementById('info')
+      function getLocation() {
+        if(navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showLocation)
+          console.log("1")
+        }else {
+          x.innerHTML = '当前浏览器不支持定位'
+        }
+      }
+      function showLocation(position) {
+        console.log(position)
+        x.innerHTML = "经度：" + position.coords.latitude + "\n维度：" + position.coords.longitude + "\n海拔：" + position.coords.altitude;
+      }
+    </script>
+  </body>
+</html>

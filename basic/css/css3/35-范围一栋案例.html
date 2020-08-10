@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      .border {
+        position: relative;
+        width: 500px;
+        height: 500px;
+        border: 1px solid gray;
+      }
+      .moveBox {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(90deg, olive, lightskyblue);
+        animation: move 4s infinite ease-in-out;
+        animation-direction: alternate;
+      }
+      @keyframes move {
+        0% {
+          top: 0;
+          left: 0;
+        }
+        25% {
+          top: 0;
+          left: 400px;
+        }
+        50% {
+          top: 400px;
+          left: 400px;
+        }
+        75% {
+          top: 400px;
+          left: 0;
+        }
+        100% {
+          top: 0;
+          left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="border">
+      <div class="moveBox"></div>
+    </div>
+  </body>
+</html>

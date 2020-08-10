@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .div1 {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+      }
+      .div2 {
+        width: 120px;
+        height: 120px;
+        background: red;
+        /* overflow: hidden; */
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      由于浮动的影响，绿色的div会脱离文档流，覆盖到div2上面。这时如果我们想让div2在div1右边紧贴，可以为div2添加BFC规范，使其不属于同一个实现效果
+    -->
+    <div class="div1"></div>
+    <div class="div2"></div>
+  </body>
+</html>

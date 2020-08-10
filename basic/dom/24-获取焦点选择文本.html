@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = () => {
+				let myText = document.getElementById('myText')
+				myText.onfocus = function(event) {
+					event.target.select() // 自动选中文本
+				}
+				myText.onselect = function(event) {
+					console.log(event.target.value)
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" value="textValue" id="myText"/>
+	</body>
+</html>

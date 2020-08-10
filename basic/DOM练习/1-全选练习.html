@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>全选练习</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+		<script type="text/javascript">
+			window.onload = () => {
+				// 获取DOM
+				let sellectAll = document.getElementById('selectAll')
+				let selectAllNot = document.getElementById('selectAllNot')
+				let selectElection = document.getElementById('selectElection')
+				let checkAllOrNot = document.getElementById('checkAllOrNot')
+				let balls = document.querySelectorAll('.ball') 
+				// 定义是否全选标识
+				let isCheckAll = true
+				// 添加事件
+				sellectAll.onclick = setClick
+				selectAllNot.onclick = setClick
+				selectElection.onclick = setClick
+				// 单位添加事件
+				for(let i = 0; i < balls.length; i++) {
+					balls[i].onclick = function() {
+						if(!balls[i].checked) {
+							checkAllOrNot.checked = false
+						}else {
+							let count = 0
+							for(let i = 0; i < balls.length; i++) {
+								if(balls[i].checked) {
+									count++
+								}
+							}
+							checkAllOrNot.checked = (count === 4)
+						}
+					}
+				}
+				// 函数集
+				function setClick(event) {
+					switch (event.target.id) {
+						case 'selectAll':
+							console.log('全选')
+							checkAllOrNotFlag(true)
+							break
+						case 'selectAllNot':
+							checkAllOrNotFlag(false)
+							break
+						case 'selectElection':
+							election()
+							break
+						default:
+							break
+					}
+				}
+				function checkAllOrNotFlag(flag) {
+					for(let i = 0; i < balls.length; i++) {
+						balls[i].checked = flag
+					}
+					checkAllOrNot.checked = flag
+				}
+				function election() {
+					for(let i = 0; i < balls.length; i++) {
+						balls[i].checked = !balls[i].checked
+						if(!balls[i].checked) {
+							checkAllOrNot.checked = false
+							isCheckAll = false
+						}
+					}
+					(isCheckAll) && (checkAllOrNot.checked = true)
+					isCheckAll = true
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="m-2">
+			<p>
+				<span>您爱好的运动是？</span>
+				<label><input type="checkbox" id="checkAllOrNot" />全选/全不选</label>
+			</p>
+			<p>
+				<label><input type="checkbox" id="football" class="ball"/>足球</label>
+				<label><input type="checkbox" id="basketball" class="ball"/>篮球</label>
+				<label><input type="checkbox" id="pingpong" class="ball"/>乒乓球</label>
+				<label><input type="checkbox" id="tennis" class="ball"/>羽毛球</label>
+			</p>
+			<p>
+				<input type="button" value="全选" id="selectAll"/>
+				<input type="button" value="全不选" id="selectAllNot"/>
+				<input type="button" value="反选" id="selectElection"/>
+			</p>
+		</div>
+	</body>
+</html>

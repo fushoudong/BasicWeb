@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      div {
+        counter-reset: item;
+      }
+      h1:before {
+        counter-increment: item;
+        content: "list " counter(item) ": ";
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>HTML教程</h1>
+      <h1>CSS教程</h1>
+      <h1>JavaScript教程</h1>
+    </div>
+  </body>
+</html>

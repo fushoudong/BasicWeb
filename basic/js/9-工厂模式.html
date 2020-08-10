@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function createPerson(name, age, gender) {
+				let o = new Object()
+				o.name = name
+				o.age = age
+				o.gender = gender
+				return o
+			}
+			let girl = new createPerson('斐斐', 22, '女')
+			console.log(girl)
+			console.log(girl instanceof Object)
+			console.log(girl instanceof createPerson)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

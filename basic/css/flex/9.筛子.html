@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			ul {
+				width: 100px;
+				height: 100px;
+				margin-left: 20px;
+				border: 1px solid black;
+				border-radius: 5px;
+				margin-bottom: 10px;
+				margin-top: 10px;
+				display: flex;
+				flex-wrap: wrap;
+			}
+			li {
+				width: 30px;
+				height: 30px;
+				background: black;
+				border-radius: 50%;
+			}
+			.box1 li {
+				margin: auto;
+			}
+			.box2, .box3, .box4, .box5, .box6 {
+				justify-content: space-between;
+			}
+			.box2 li:last-child,
+			.box3 li:last-child {
+				align-self: flex-end;
+			}
+			.box3 li:nth-child(2) {
+				align-self: center;
+			}
+			div {
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+			}
+			.box4 div:last-child,
+			.box5 div:last-child,
+			.box6 div:last-child {
+				align-items: flex-end;
+			}
+			.box5 div:nth-child(2) {
+				align-items: center;
+				justify-content: center;
+			}
+			.box6 div:nth-child(2) {
+				align-items: center;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="box1">
+			<li></li>
+		</ul>
+		<ul class="box2">
+			<li></li>
+			<li></li>
+		</ul>
+		<ul class="box3">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ul class="box4">
+			<div>
+				<li></li>
+				<li></li>				
+			</div>
+			<div>
+				<li></li>
+				<li></li>				
+			</div>
+		</ul>
+		<ul class="box5">
+			<div>
+				<li></li>
+				<li></li>
+			</div>
+			<div>
+				<li></li>
+			</div>
+			<div>
+				<li></li>
+				<li></li>
+			</div>
+			
+		</ul>
+		<ul class="box6">
+			<div>
+				<li></li>
+				<li></li>
+			</div>
+			<div>
+				<li></li>
+				<li></li>
+			</div>
+			<div>
+				<li></li>
+				<li></li>
+			</div>
+		</ul>
+	</body>
+</html>

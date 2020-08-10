@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../public/lib/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <title>发表评论</title>
+    <style>
+      p a {
+        font-size: 40px;
+        color: #3773a0;
+      }
+    </style>
+  </head>
+  <body class="m-2">
+    <p>
+      <a href="/">发表评论</a>
+      <span>Subtext for header</span>
+    </p>
+    <form action="/pinglun" method="get">
+      <p>
+        <label 
+          for="name" 
+          class="w-100">
+          评论者姓名
+          <input
+            class="form-control mt-2"
+            id="name"
+            name="name"
+            minlength="2"
+            maxlength="5"/>
+        </label>
+      </p>
+      <p>
+        <label 
+          for="content"
+          class="w-100">
+          评论者姓名
+          <textarea
+            class="form-control mt-2"
+            id="content"
+            name="message"
+            rows="10"
+            minlength="5"
+            maxlength="30"></textarea>
+        </label>
+      </p>
+      <input 
+        type="submit" 
+        class="btn btn-info" 
+        value="发表"/>
+    </form>
+  </body>
+</html>

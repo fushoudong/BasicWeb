@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			console.log(factoil(10))
+			let another = factoil
+			factoil = {}
+			console.log(another(10))
+			function factoil(n) {
+				if (n <= 1) return 1
+				else return n * arguments.callee(n-1)
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

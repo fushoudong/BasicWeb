@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>UI事件</title>
+		<script type="text/javascript">
+			window.onload = function() {
+				// alert('DOM加载完毕')
+				// console.log(document.getElementsByTagName('img')[0])
+				// document.getElementsByTagName('img')[0].onload = function() {
+				// 	// alert('图片资源加载完毕')
+				// 	console.log('loaded')
+				// }
+				window.onresize = function(event) {
+					console.log(event.target.innerHeight)
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<!-- <img src="https://www.baidu.com/img/dong_66cae51456b9983a890610875e89183c.gif" alt="百度"> -->
+		<textarea rows="10" cols="50">
+			
+		</textarea>
+	</body>
+</html>

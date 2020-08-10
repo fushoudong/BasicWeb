@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>操作表格</title>
+		<script type="text/javascript">
+			window.onload = () => {
+				let table = document.createElement('table')
+				table.border = 1
+				table.cellSpacing = "0"
+				table.width = '100%' // 这里必须使用字符串表达形式
+				
+				let tbody = document.createElement('tbody')
+				table.appendChild(tbody)
+				
+				tbody.insertRow(0)
+				tbody.rows[0].insertCell(0)
+				tbody.rows[0].cells[0].appendChild(document.createTextNode('cell 1 1'))
+				tbody.rows[0].insertCell(1)
+				tbody.rows[0].cells[1].appendChild(document.createTextNode('cell 1 2'))
+				
+				tbody.insertRow(1)
+				tbody.rows[1].insertCell(0)
+				tbody.rows[1].cells[0].appendChild(document.createTextNode('cell 2 1'))
+				tbody.rows[1].insertCell(1)
+				tbody.rows[1].cells[1].appendChild(document.createTextNode('cell 2 2'))
+				
+				document.body.appendChild(table)
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

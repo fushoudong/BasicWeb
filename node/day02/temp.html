@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <h3>大家好，我叫： {{ name }}</h3>
+    <h3>我今年 {{ age }} 岁了</h3>
+    <h3>我来自 {{ province }}</h3>
+    <h3>我喜欢：{{each hobbies}} {{ $value }} {{/each}}</h3>
+  </body>
+</html>

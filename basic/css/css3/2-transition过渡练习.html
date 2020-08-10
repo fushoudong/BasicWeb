@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transition过渡练习</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0em;
+        list-style: none;
+      }
+      .progress {
+        width: 100px;
+        height: 10px;
+        background: #20b2aa;
+        transition: all 2s ease;
+      }
+      .progress:hover {
+        width: 200px;
+      }
+      ul {
+        width: 360px;
+        height: 60px;
+      }
+      li {
+        width: 60px;
+        height: 60px;
+        float: left;
+        background: url("../img/aNavBg.png");
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+      li:nth-child(1) {
+        background-position: 0 0;
+      }
+      li:nth-child(2) {
+        background-position: 60px 0;
+      }
+      li:nth-child(3) {
+        background-position: 120px 0;
+      }
+      li:nth-child(4) {
+        background-position: 180px 0;
+      }
+      li:nth-child(5) {
+        background-position: 240px 0;
+      }
+      li:nth-child(6) {
+        background-position: 300px 0;
+      }
+      li:nth-child(1):hover {
+        background-position: 0 -70px;
+      }
+      li:nth-child(2):hover {
+        background-position: 60px -70px;
+      }
+      li:nth-child(3):hover {
+        background-position: 120px -70px;
+      }
+      li:nth-child(4):hover {
+        background-position: 180px -70px;
+      }
+      li:nth-child(5):hover {
+        background-position: 240px -70px;
+      }
+      li:nth-child(6):hover {
+        background-position: 300px -70px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress"></div>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </body>
+</html>

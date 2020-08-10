@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			let obj = {
+				name: '斐斐',
+				age: 22,
+				gender: '女'
+			}
+			console.log(obj)
+			let girl = {}
+			Object.defineProperties(girl ,{
+				name: {
+					configurable: false,
+					enumerable: false,
+					writable: true,
+					value: 'girl'
+				},
+				_age: {
+					value: 22,
+					configurable: true,
+					enumerable: true,
+					writable: true
+				},
+				age: {
+					set:function(val) {
+						this._age = val
+					},
+					get() {
+						return this._age
+					}
+				}
+			})
+			girl.__proto__.sayName = function() {return}
+			girl.__proto__.boy = "小付砸"
+			console.log(girl)
+			girl.age = 23
+			console.log(girl)
+			console.log(Object.getOwnPropertyDescriptor(girl, 'name'))
+			for(let key in girl) {
+				//无论是否存在于原型中
+				console.log(key)
+			}
+			console.log(girl.hasOwnProperty('boy'))
+			console.log('boy' in girl)
+			console.log(Object.getOwnPropertyNames(girl))
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
