@@ -6,7 +6,7 @@ router.get('/api/login', (req, res) => {
     respCode: '0000',
     status: 'OK',
     message: '我爱斐斐'
-  })
+  }) 
 })
 
 module.exports = router
