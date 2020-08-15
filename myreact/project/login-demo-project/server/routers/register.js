@@ -3,6 +3,9 @@ const register = express.Router()
 
 const user = require("../user")
 
+const jwt = require("jsonwebtoken")
+const config = require("../config")
+
 register.post("/api/register",(req, res) => {
   const form = req.query
   if(form.name === "") {
@@ -53,10 +56,10 @@ register.post("/api/register",(req, res) => {
     })
    
   }
-})
+}) 
 
 register.post('/api/login', (req, res) => {
-  const form = req.query
+  const form = req.body
   if(form.account === "") {
     res.status(202).json({
       exception: true,
@@ -84,12 +87,18 @@ register.post('/api/login', (req, res) => {
           status: -1,
           msg: '账号密码不匹配'
         })
+      }else {
+        const toke = jwt.sign({
+          id: data._id,
+          name: data.name
+        },config.jwtScrect)
+        return res.status(200).json({
+          msg: '登录成功',
+          respCode: '0000',
+          status: 1,
+          token: toke
+        })
       }
-      return res.status(200).json({
-        msg: '登录成功',
-        respCode: '0000',
-        status: 1
-      })
     })
   }
 })

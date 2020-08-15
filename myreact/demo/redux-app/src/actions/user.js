@@ -1,7 +1,7 @@
 import * as con from "../constants";
 const add_user = (user) => {
   return {
-    type: con.ADD_USER,
+    type: con.ADD_USER, 
     user,
   };
 };

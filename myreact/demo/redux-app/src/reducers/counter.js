@@ -9,6 +9,6 @@ const counter = (state = 0, action) => {
     default:
       return state
   }
-}
+} 
 
 export default counter

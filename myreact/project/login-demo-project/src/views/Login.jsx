@@ -1,7 +1,9 @@
 import React from "react";
-import {doLogin} from '../network/login'
+// import {doLogin} from '../network/login'
+import {doLogin} from '../actions/login'
+import {connect} from 'react-redux'
 import classnames from 'classnames'
-export default class Login extends React.Component {
+class Login extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -18,7 +20,7 @@ export default class Login extends React.Component {
     this.setState({
       doLoginUn: true
     })
-    doLogin(this.state)
+    this.props.doLogin(this.state)
     .then(res => {
       console.log(res)
       if(res.exception) {
@@ -38,11 +40,10 @@ export default class Login extends React.Component {
           console.log(res.msg)
         }
       }
-    })
-    .catch(error => {
+    },error => {
       console.log(error)
     })
-  }
+ }
   handleDataChange = (e) => {
     const name = e.target.name
     const value = e.target.value
@@ -117,3 +118,4 @@ export default class Login extends React.Component {
     );
   }
 }
+export default connect(null, {doLogin})(Login)

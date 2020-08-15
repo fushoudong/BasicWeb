@@ -44,6 +44,7 @@ exports.addUser = ((user, callback) => {
 
 exports.login = ((user, callback) => {
   getUserById(user.account, (error, data) => {
+    console.log(user, error, data, "exports.login")
     if(!data) return callback(error)
     return callback(null, data)
   })
