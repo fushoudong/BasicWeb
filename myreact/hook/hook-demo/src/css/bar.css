@@ -1,0 +1,15 @@
+.menu {
+  display: flex;
+  justify-content: start;
+  margin-top: 15px;
+  margin-left: -30px;
+}
+.menu > * {
+  display: block;
+  width: 70px;
+  line-height: 20px;
+  text-align: center;
+}
+.active {
+  color: red;
+}
