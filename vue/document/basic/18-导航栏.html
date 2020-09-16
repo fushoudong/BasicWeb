@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.container {
+				width: 302px;
+				height: 40px;
+				margin: 40px auto;
+				display: flex;
+				align-items: center;
+				border: 1px solid black;
+			}
+			.container * {
+				flex: 1;
+				border-right: 0.5px solid black;
+				text-align: center;
+				line-height: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<name-slot>
+				<template v-slot:right>
+					<p>right</p>
+				</template>
+				<template>
+					<p>center</p>
+				</template>
+				<template v-slot:left>
+					<p>left</p>
+				</template>
+			</name-slot>
+		</div>
+		<template id="name-slot">
+			<div class="container">
+				<slot name="left"></slot>
+				<slot></slot>
+				<slot name="right"></slot>
+			</div>
+		</template>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			Vue.component('name-slot', {
+				template: '#name-slot',
+				data() {
+					return {}
+				}
+			})
+			const vm = new Vue({
+				el: '#app',
+				data() {
+					return {
+		
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

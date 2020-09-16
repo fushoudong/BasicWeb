@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" @click="show = !show">toggle</button>
+			<transition name="bounce"
+				v-on:before-enter="beforeEnter"
+				v-on:enter="enter"
+				v-on:after-enter="afterEnter"
+				v-on:enter-cancelled="enterCancelled"
+				
+				v-on:before-leave="beforeLeave"
+				v-on:leave="leave"
+				v-on:after-enter="afterLeave"
+				v-on:leave-cancelled="leaveCancelled">
+				<p v-show="show" style="width: 100px;">我爱斐斐</p>
+			</transition>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			const vm = new Vue({
+				el: "#app",
+				data() {
+					return  {
+						show: true
+					}
+				},
+				methods: {
+					beforeEnter(el) {
+						console.log(el)
+					},
+					enter(el, done) {
+						console.log(el)
+						done()
+					},
+					afterEnter(el) {
+						console.log(el)
+					},
+					enterCancelled(el) {
+						console.log(el)
+					},
+					beforeLeave(el) {
+						console.log(el)
+					},
+					leave(el, done) {
+						console.log(el)
+						done()
+					},
+					afterLeave(el) {
+						console.log(el)
+					},
+					leaveCancelled(el) {
+						
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

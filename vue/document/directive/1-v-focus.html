@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-focus v-color />
+			<p v-demo></p>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			// Vue.directive('focus',{
+			// 	inserted: el => {
+			// 		el.focus()
+			// 	}
+			// })
+			const vm = new Vue({
+				el: '#app',
+				directives: {
+					focus: {
+						bind(el, binding, vnode) {
+							console.log('进行绑定')
+							console.log(binding.name, binding.rawName, binding)
+						},
+						inserted: el => {
+							console.log(el)
+							el.focus()
+						}
+					},
+					color: {
+						inserted: el => {
+							el.style.background = "#eee222"
+						}
+					},
+					demo(el, binding, vnode) {
+						console.log(binding)
+						el.innerText = `
+							name: ${binding.name}
+							rawName: ${binding.rawName}
+						`
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

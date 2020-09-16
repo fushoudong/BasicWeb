@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<name-slot>
+				<template v-slot:header>
+					<p>头部具名插槽</p>
+					<hr>
+				</template>
+				<template>
+					<p>A paragraph for the main content.</p>
+					<p>And another one.</p>
+					<hr >
+				</template>
+				<template v-slot:footer>
+					 <p>Here's some contact info</p>
+				</template>
+			</name-slot>
+		</div>
+		<template id="name-slot">
+			<div>
+				<div class="container">
+					<header>
+						<slot name="header"></slot>
+					</header>
+					<main>
+						<slot></slot>
+					</main>
+					<footer>
+						<slot name="footer"></slot>
+					</footer>
+				</div>
+			</div>
+		</template>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			Vue.component('name-slot', {
+				template: '#name-slot',
+				data() {
+					return {}
+				}
+			})
+			const vm = new Vue({
+				el: '#app',
+				data() {
+					return {
+
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

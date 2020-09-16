@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{msg}}</p>
+			<p>{{msg.split("").reverse().join("")}}</p>
+			<p>{{msg | valueFilter}}</p>
+			<p v-text="text"></p>
+			<p v-once>{{once}}</p>
+			<p v-html="html"></p>
+			<p v-pre>{{pre}}</p>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			const vm = new Vue({
+				el: "#app",
+				data() {
+					return {
+						msg: 'mustache语法',
+						text: 'vText内容',
+						once: '不允许修改',
+						html: '<h1>这是一段html</h1>',
+						pre: '内容失效，直接显示'
+					}
+				},
+				filters: {
+					valueFilter(value) {
+						return value.charAt(0)
+					} 
+				}
+			})
+		</script>
+	</body>
+</html>

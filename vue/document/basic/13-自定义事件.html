@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			{{faData}}
+			<p><button type="button" @click="clickFa">父组件</button></p>
+			<my-event @my-click="clickSon"></my-event>
+		</div>
+		<template id="event">
+			<div>
+				<button type="button" @click="clickMySon">doClick</button>
+			</div>
+		</template>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			Vue.component('my-event', {
+				template: '#event',
+				data() {
+					return {
+						faData: '父组件'
+					}
+				},
+				methods: {
+					clickMySon() {
+						this.$emit('my-click', '电机子组件')
+					}
+				}
+			})
+			const vm = new Vue({
+				el: '#app',
+				data() {
+					return {
+						faData: '默认'
+					}
+				},
+				methods: {
+					clickFa() {
+						console.log('父组件点击')
+					},
+					clickSon(data) {
+						this.faData = data
+						console.log('被子组件调用', data)
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

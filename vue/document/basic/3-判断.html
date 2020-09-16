@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p v-if="flag">flag为true</p>
+			<p v-else>flag为false</p>
+			<p v-show="flag">show操作</p>
+			<p v-show="!flag">!flag</p>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			const vm = new Vue({
+				el: '#app',
+				data() {
+					return {
+						flag: true
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

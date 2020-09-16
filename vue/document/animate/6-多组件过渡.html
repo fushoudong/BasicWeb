@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.component-fade-enter-active,
+			.component-fade-leave-active {
+				transition: all 1s;
+			}
+			.component-fade-enter,
+			.component-fade-leave-to {
+				transform: translateX(30px);
+				opacity: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<p>
+				<button @click="view = 'v-a'">组件A</button>
+				<button @click="view = 'v-b'">组件B</button>
+			</p>
+			<transition name="component-fade" mode="out-in">
+				<component :is="view"></component>
+			</transition>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			const vm = new Vue({
+				el: '#app',
+				data() {
+					return {
+						view: 'v-a'
+					}
+				},
+				components: {
+					'v-a': {
+						template: `<div>这是组件A</div>`
+					},
+					'v-b': {
+						template: `<div>这是组件B</div>`
+					},
+				}
+			})
+		</script>
+	</body>
+</html>

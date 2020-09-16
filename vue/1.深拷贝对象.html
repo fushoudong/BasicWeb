@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let a = {
+				name:'深拷贝',
+				data: {
+					query: {
+						id: 12,
+						list: [
+							{
+								param: '水果'
+							}
+						]
+					},
+					get() {
+						return this.query
+					}
+				}
+			}
+			function deepClone(obj) {
+				console.log('进入内层', obj)
+				if(typeof obj == "object") {
+					let cloneNodeObj = {}
+					for(let key in obj) {
+						cloneNodeObj =  deepClone(obj[key])
+					}
+					return cloneNodeObj
+				}else {
+					return obj
+				}
+			}
+			const obj = deepClone(a)
+			console.log(obj)
+		</script>
+	</body>
+</html>

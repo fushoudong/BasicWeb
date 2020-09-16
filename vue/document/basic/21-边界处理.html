@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{title}}</p>
+			<button type="button" @click="getRef">获取</button>
+			<button type="button" @click="focusSon">聚焦子组件</button>
+			<son ref="sonRef"></son>
+		</div>
+		<template id="son">
+			<div>
+				<p>{{son}}</p>
+				<input type="text" ref="sonInput"/>
+			</div>
+		</template>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			Vue.component('son', {
+				template: '#son',
+				data() {
+					return {
+						son: '子组件'
+					}
+				},
+				created() {
+					// console.log(this.$root.msg)
+					// console.log(this.$parent.msg)
+					this.$parent.show()
+					this.$parent.change('这是修改的title')
+				},
+				methods: {
+					setSonData() {
+						this.son = '修改后的子组件'
+					}
+				}
+			})
+			const vm = new Vue({
+				el: "#app",
+				data() {
+					return {
+						msg: '我爱斐斐',
+						title: '父组件的title'
+					}
+				},
+				methods: {
+					show() {
+						console.log(this.msg)
+					},
+					change(newTitle) {
+						this.title = newTitle
+					},
+					getRef() {
+						console.log(this.$refs)
+						this.$refs['sonRef'].son = '父组件修改'
+					},
+					focusSon() {
+						this.$refs['sonRef'].$refs['sonInput'].focus()
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

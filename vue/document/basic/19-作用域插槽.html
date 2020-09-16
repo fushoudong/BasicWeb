@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<slot-scope v-slot:default="user">
+				{{user}}
+			</slot-scope>
+		</div>
+		<template id="slot-scope">
+			<span>
+				<slot v-bind:user="user">
+					<!-- {{user.lastName}} -->
+				</slot>
+			</span>
+		</template>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			Vue.component('slot-scope', {
+				template: '#slot-scope',
+				data() {
+					return {
+						user: {
+							firstName: '姓',
+							lastName: '名'
+						}
+					}
+				}
+			})
+			const vm = new Vue({
+				el: '#app',
+				data() {
+					return {
+						
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

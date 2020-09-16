@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{msg}}</p>
+			<son1></son1>
+		</div>
+		<template id="son1">
+			<div>
+				{{msg}}
+				<son></son>
+			</div>
+		</template>
+		<template id="son2">
+			<div id="son2">
+				{{msg}}
+				<button type="button" @click="getData">do</button>
+			</div>
+		</template>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			Vue.component('son1', {
+				template: '#son1',
+				data() {
+					return {
+						msg: '一层组件'
+					}
+				},
+				components: {
+					son: {
+						template: '#son2',
+						data() {
+							return {
+								msg: '二层子组件'
+							}
+						},
+						inject:['setMsg', 'getData'],
+						methods: {
+							doButton() {
+								this.getData()
+							}
+						}
+					}
+				}
+			})
+			
+			const  vm = new Vue({
+				el: '#app',
+				data() {
+					return {
+						msg: '最外层组件'
+					}
+				},
+				methods: {
+					getData() {
+						console.log(this.msg)
+					},
+					setMsg() {
+						this.msg = 'aaa'
+					}
+				},
+				provide() {
+					return {
+						setMsg: this.setMsg(),
+						getData: this.getData()
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
+                                     

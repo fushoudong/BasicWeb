@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			{{msg | capitalize | getLast}}
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			const vm = new Vue({
+				el: '#app',
+				data: {
+					msg: 'feifei'
+				},
+				methods: {
+					
+				},
+				filters: {
+					capitalize(val) {
+						console.log(val)
+						if(!val) return ""
+						else {
+							val = val.toString()
+							return val.charAt(0).toUpperCase() + val.slice(1)
+						}
+					},
+					getLast(val) {
+						return val.toString().slice(val.toString().length-1).toUpperCase()
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

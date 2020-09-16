@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			const myMixin = {
+				created() {
+					this.hello()
+				},
+				methods: {
+					hello() {
+						console.log('hello mixin')
+					}
+				}
+			}
+			const  vm = new Vue({
+				el: '#app',
+				mixins: [myMixin],
+				data() {
+					return {
+						
+					}
+				},
+				created() {
+					this.say()
+				},
+				methods: {
+					say() {
+						console.log('say vue')
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

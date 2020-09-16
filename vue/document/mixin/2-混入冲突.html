@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			{{foo}}
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			const mixin = {
+				data() {
+					return {
+						foo: 'foo',
+						msg: '混入的msg'
+					}
+				},
+				created() {
+					console.log('这是混入的钩子函数')
+				},
+				methods: {
+					say() {
+						console.log("混入，你好")
+					},
+					mixinSay() {
+						console.log('混入单独的方法')
+					}
+				}
+			}
+			const vm = new Vue({
+				el: '#app',
+				mixins: [mixin],
+				data() {
+					return {
+						msg: '组件的msg',
+						info: '组件info'
+					}
+				},
+				created() {
+					console.log('组件钩子函数')
+					console.log(this.$data)
+					this.mixinSay()
+					this.say()
+				},
+				methods: {
+					say() {
+						console.log('组件,你好')
+					},
+					componentSay() {
+						console.log('组件单独的方法')
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

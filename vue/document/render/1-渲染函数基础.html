@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<anchored-heading :level="level">这是一级标题</anchored-heading>
+			<anchored-heading :level="2">这是一级标题</anchored-heading>
+			<include-com></include-com>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			Vue.component('anchored-heading', {
+				render(createElement) {
+					console.log(this.$slots.default, this.level)
+					return createElement(
+						'h' + this.level,  // 标签名称
+						this.$slots.default // 子节点数组
+					)
+				},
+				props: {
+					level: {
+						type: Number,
+						required: true
+					}
+				}
+			})
+			Vue.component('include-com', {
+				render(createElement) {
+					return createElement(
+						'div',
+						[
+							createElement('h1', '隔壁老王'),
+							createElement('button', 'haha')
+						]
+					)
+				}
+			})
+			const vm = new Vue({
+				el: "#app",
+				data: {
+					level: 1
+				}
+			})
+		</script>
+	</body>
+</html>

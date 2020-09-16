@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<my-compoment :level="1"></my-compoment>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			Vue.component('my-compoment', {
+				functional: true,
+				props: {
+					level: {
+						type: Number,
+						default: 0
+					}
+				},
+				render(createElement, context) {
+					console.log(context)
+					return createElement('h1', `${context.props.level}`)
+				}
+			})
+			const vm = new Vue({
+				el: '#app',
+				data: {
+					
+				},
+				methods: {
+					
+				}
+			})
+		</script>
+	</body>
+</html>

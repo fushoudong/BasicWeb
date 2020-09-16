@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.button-enter-active,
+			.button-leave-active {
+				transition: all 1s;
+			}
+			.button-enter,
+			.button-leave-to {
+				opacity: 0;
+				transform: translateX(0);
+			}
+			.button-enter,
+			.button-leave-to {
+				opacity: 1;
+				transform: translateX(100px);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" @click="isOn = !isOn">toggle</button>
+			<transition key="on" mode="in-out" name="button">
+				<p>
+					<button v-show="isOn" @click="isOn = false" key="on">on</button>
+					<button v-show="!isOn" @click="isOn = true" key="off">off</button>
+				</p>
+			</transition>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			const vm = new Vue({
+				el: "#app",
+				data() {
+					return  {
+						isOn: true
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

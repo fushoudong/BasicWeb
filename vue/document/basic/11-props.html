@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<blog-post blog="传递的数据" :obj="obj"></blog-post>
+		</div>
+		<template id="blog">
+			<div>
+				{{blog}}
+				<p>{{obj.name}} - {{obj.age}} - {{obj.gender}}</p>
+			</div>
+		</template>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			Vue.component('blog-post', {
+				template: '#blog',
+				props: ['blog', 'obj'],
+				data() {
+					return {
+						
+					}
+				}
+			})
+			const vm = new Vue({
+				el: '#app',
+				data() {
+					return {
+						obj: {
+							name: '斐斐',
+							age: 22,
+							gender: '女'
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

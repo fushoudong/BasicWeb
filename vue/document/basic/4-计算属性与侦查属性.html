@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{fullName}}</p>
+			<p>{{fullName}}</p>
+			<p>{{fullName}}</p>
+			<p>{{fullName}}</p>
+			<p>{{getFullName()}}</p>
+			<p>{{getFullName()}}</p>
+			<p>{{getFullName()}}</p>
+			<p>{{getFullName()}}</p>
+			<p><button type="button" @click="count ++">++</button></p>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			const vm = new Vue({
+				el: "#app",
+				data() {
+					return {
+						firstName: 'Mick',
+						lastName: 'Jackson',
+						count: 0
+					}
+				},
+				computed: {
+					fullName() {
+						console.log('computed')
+						return this.firstName + " " + this.lastName
+					},
+				},
+				watch: {
+					count(newVal, oldVal) {
+						console.log(newVal, oldVal)
+					}
+				},
+				methods:{
+					getFullName() {
+						console.log('methods')
+						return this.firstName + " " + this.lastName
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

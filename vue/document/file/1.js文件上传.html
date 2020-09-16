@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<form>
+			<input type="file" id="files" />
+			<input type="button" onclick="uploadFile" value="上传"/>
+			<script type="text/javascript">
+				const button = document.querySelectorAll('input')[1]
+				button.onclick = function(e) {
+					uploadFile()
+				}
+				function uploadFile() {
+					const xhr = new XMLHttpRequest()
+					const fileObj = document.getElementById('files').files[0]
+					const form = new FormData()
+					form.append("file", fileObj)
+					const path = "http://localhost:8080" + "/api/attachment/upload";
+					xhr.open('post', path, true)
+					xhr.send(form)
+				}
+			</script>
+		</form>
+	</body>
+</html>

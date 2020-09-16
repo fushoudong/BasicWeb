@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.italic {
+				font-style: italic;
+			}
+			.blue {
+				color: blue !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<template-demo :level="1">一级标题</template-demo>
+			<template-demo :level="2">二级标题</template-demo>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script>
+			Vue.component('template-demo', {
+				// render(createElement) {
+				// 	return createElement(`h${this.level}`, {
+				// 		style: {
+				// 			color: 'red',
+				// 			fontSize: '20px'
+				// 		},
+				// 		class: {
+				// 			"italic": true,
+				// 			"blue": true
+				// 		},
+				// 		attrs: {
+				// 			id: 'lff',
+				// 			class: 'blue'
+				// 		},
+				// 		on: {
+				// 			click: this.clickListener
+				// 		}
+				// 	}, [
+				// 		createElement('h2', '二级'),
+				// 		createElement('h3', this.$slots.default)
+				// 	])
+				// },
+				render(createElememt) {
+					return createElememt('ul', Array.apply(null, { length: 20 }).map(() => {
+						return createElememt('li', '12')
+					}))
+				},
+				methods: {
+					clickListener() {
+						console.log('点击事件')
+					}
+				},
+				props: {
+					level: {
+						type: Number,
+						default: 1
+					}
+				}
+			})
+			const vm = new Vue({
+				el: "#app",
+				data() {
+					return {
+						
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<blog-post v-bind="post"></blog-post>
+		</div>
+		<template id="post">
+			<div>
+				<p>{{id}}</p>
+				<p>{{title}}</p>
+			</div>
+		</template>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			Vue.component('blog-post', {
+				template: '#post',
+				props: ['id', 'title'],
+				data() {
+					return {
+						
+					}
+				},
+			})
+			const vm = new Vue({
+				el: "#app",
+				data: {
+					post: {
+						id: '111',
+						title: '传递的title'
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

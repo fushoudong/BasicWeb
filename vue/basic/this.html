@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			const name = '外层名称'
+			const b = {
+				name: 'b',
+			}
+			const a = {
+				name: '名称',
+				say() {
+					setTimeout(() => {
+						console.log(this.name)
+						console.log(this)
+					}, 1000)
+				}
+			}
+			// a.say()
+			let fun = a.say.bind(this)
+			fun.call(b)
+		</script>
+	</body>
+</html>
