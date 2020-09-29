@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="date" value="1997-01-12" id="date"/>
+    <input type="text" id="text" />
+    <button id="button">获取</button>
+    <script>
+      // 获取日期控件
+      const date = document.getElementById('date')
+      // 获取按钮控件
+      const button = document.getElementById('button')
+      button.onclick = function(e) {
+        // 取日期控件的值
+        let getDate = date.value
+        document.getElementById('text').value = getDate
+      }
+      document.getElementById('text').oninput = (e) => {
+        console.log(e.target.value)
+      }
+    </script>
+  </body>
+</html>

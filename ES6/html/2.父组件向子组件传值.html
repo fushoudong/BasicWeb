@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <son :son-data="sendFather"></son>
+    </div>
+    <template id="son">
+      <div>
+        {{sonData}}  --  {{bundary}}
+      </div>
+    </template>
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data() {
+          return {
+            sendFather: '父组件传递的数据',
+            bundaryData: '边界处理的数据'
+          }
+        },
+        components: {
+          son: {
+            template: "#son",
+            props: ['sonData'],
+            data() {
+              return {
+                bundary: this.$parent.bundaryData
+              }
+            },
+          }
+        }
+      })
+    </script>
+  </body>
+</html>

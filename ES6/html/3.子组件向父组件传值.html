@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.4.2/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{fatherData}}
+      {{sendFather}}
+      <son @change-father="changeFather" ref="reference"></son>
+    </div>
+    <template id="son">
+      <div>
+        <p>{{son}}</p>
+      </div>
+    </template>
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data() {
+          return {
+            sendFather: '父组件传递的数据',
+            bundaryData: '边界处理的数据',
+            fatherData: '父组件数值'
+          }
+        },
+        methods: {
+          changeFather(value) {
+            this.fatherData = value
+          }
+        },
+        mounted() {
+          this.sendFather = this.$refs['reference'].father
+          // console.log(this.$refs)
+        },
+        components: {
+          son: {
+            template: "#son",
+            data() {
+              return {
+                son: '子组件的数据',
+                father: '发送给父组件'
+              }
+            },
+            created() {
+              this.$emit('change-father', this.son)
+            },
+          }
+        }
+      })
+    </script>
+  </body>
+</html>

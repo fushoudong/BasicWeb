@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function defineReactive(data, key, val) {
+        let dep = []
+        Object.defineProperty(data, key, {
+          configurable: true,
+          enumerable: true,
+          get: function() {
+            dep.push(window.target)
+            console.log("dep", window.target)
+            return val
+          },
+          set: function(newVal) {
+            console.log('修改person', newVal)
+            if(val === newVal) {
+              console.log('数据一致，未发生修改')
+              return 
+            }
+            for(let i = 0; i < dep.length-1; i++ ) {
+              dep[i](newVal, val)
+            }
+            for(let i in 10) {console.log(i)}
+            val = newVal
+          }
+        })
+      }
+      const person = {
+        name: '斐斐',
+        age: 22,
+        gender: '女'
+      }
+      defineReactive(person, 'name', 'feifei')
+      person.name = 'feifei1'
+      console.log(person.name)
+    </script>
+  </body>
+</html>

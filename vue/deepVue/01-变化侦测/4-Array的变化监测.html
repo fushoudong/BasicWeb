@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arrayProto = Array.prototype
+      // 定义自定义数组原型，可以实现数据拦截
+      const arrayMethods = Object.create(arrayProto)
+      ;[
+        'push',
+        'pop',
+        'unshift',
+        'shift',
+        'sort',
+        'reverse',
+        'splice'
+      ].forEach((item) => {
+        Object.defineProperty(arrayMethods, item, {
+          value: function(...args) {
+            console.log(args)
+            return original.apply(this, args)
+          },
+          configurable: true,
+          enumerable: true,
+          writable: true
+        })
+      })
+      console.log(arrayMethods)
+      // 定义转化
+      class Observer {
+        constructor(value) {
+          this.value = value
+          if (Array.isArray(value)) {
+            // 修改传入的数组的原型，使其可以实现拦截hhhh   
+            value.__proto__ = arrayMethods
+          }else {
+            this.walk(value)
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
